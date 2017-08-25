@@ -13,6 +13,7 @@ import com.beyonity.matchinggame.events.EventBus;
 import com.beyonity.matchinggame.events.ui.BackGameEvent;
 import com.beyonity.matchinggame.ui.PopupManager;
 import com.beyonity.matchinggame.utils.Utils;
+import com.google.android.gms.ads.MobileAds;
 
 public class MainActivity extends FragmentActivity {
 
@@ -21,7 +22,7 @@ public class MainActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		MobileAds.initialize(this, "ca-app-pub-2287984365462163~1823066143");
 		Shared.context = getApplicationContext();
 		Shared.engine = Engine.getInstance();
 		Shared.eventBus = EventBus.getInstance();

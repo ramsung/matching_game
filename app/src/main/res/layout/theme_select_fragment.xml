@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/theme_margin"
-            android:layout_weight="1" >
+            android:layout_weight="3" >
 
             <ImageView
                 android:id="@+id/theme_animals"
@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/theme_margin"
-            android:layout_weight="1">
+            android:layout_weight="3">
 
             <ImageView
                 android:id="@+id/theme_monsters"
@@ -48,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/theme_margin"
-            android:layout_weight="1" >
+            android:layout_weight="3" >
 
             <ImageView
                 android:id="@+id/theme_emoji"
@@ -62,25 +62,57 @@
 
     </LinearLayout>
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_weight="0"
-        android:layout_marginTop="10dp"
         android:orientation="horizontal">
         <RelativeLayout
             android:id="@+id/theme_flag_container"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/theme_margin"
-            android:layout_weight="4" >
+            android:layout_margin="@dimen/theme_margin"
+            android:layout_weight="3" >
 
             <ImageView
                 android:id="@+id/theme_flag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/flags_theme_star_0"/>
+                android:src="@drawable/flag_theme_star_0" />
+
         </RelativeLayout>
-        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/theme_food_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/theme_margin"
+            android:layout_weight="3">
+
+            <ImageView
+                android:id="@+id/theme_food"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/food_theme_star_0" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/theme_veg_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/theme_margin"
+            android:layout_weight="3" >
+
+            <ImageView
+                android:id="@+id/theme_veg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/emoji_theme_star_0" />
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
 </LinearLayout>

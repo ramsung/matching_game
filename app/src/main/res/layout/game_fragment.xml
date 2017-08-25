@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             xmlns:ads="http://schemas.android.com/apk/res-auto"
+             android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/game_board"
@@ -13,7 +14,15 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/margine_top" >
-
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               android:layout_margin="5dp"
+                ads:adSize="BANNER"
+                ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+            </com.google.android.gms.ads.AdView>
             <ImageView
                 android:id="@+id/time_bar_image"
                 android:layout_width="@dimen/clock_width"

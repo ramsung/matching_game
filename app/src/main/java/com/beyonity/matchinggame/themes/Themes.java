@@ -70,4 +70,17 @@ public class Themes {
 		return theme;
 	}
 
+	public static Theme createFoodTheme() {
+		Theme theme = new Theme();
+		theme.id = 5;
+		theme.name = "Food";
+		theme.backgroundImageUrl = URI_DRAWABLE + "back_food";
+		theme.tileImageUrls = new ArrayList<String>();
+		// 36 drawables
+		for (int i = 1; i <= 56; i++) {
+			theme.tileImageUrls.add(URI_DRAWABLE + String.format("food_%d", i));
+		}
+		return theme;
+	}
+
 }

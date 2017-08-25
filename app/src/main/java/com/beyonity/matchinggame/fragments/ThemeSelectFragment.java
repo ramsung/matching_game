@@ -28,6 +28,7 @@ public class ThemeSelectFragment extends Fragment {
 		View monsters = view.findViewById(R.id.theme_monsters_container);
 		View emoji = view.findViewById(R.id.theme_emoji_container);
 		View flag = view.findViewById(R.id.theme_flag_container);
+		View food = view.findViewById(R.id.theme_food_container);
 
 		final Theme themeAnimals = Themes.createAnimalsTheme();
 		setStars((ImageView) animals.findViewById(R.id.theme_animals), themeAnimals, "animals");
@@ -36,7 +37,10 @@ public class ThemeSelectFragment extends Fragment {
 		final Theme themeEmoji = Themes.createEmojiTheme();
 		setStars((ImageView) emoji.findViewById(R.id.theme_emoji), themeEmoji, "emoji");
 		final Theme themeFlag = Themes.createFlagTheme();
-		setStars((ImageView) flag.findViewById(R.id.theme_emoji), themeFlag, "flag");
+		setStars((ImageView) flag.findViewById(R.id.theme_flag), themeFlag, "flag");
+		final Theme themeFood = Themes.createFoodTheme();
+		setStars((ImageView) food
+				.findViewById(R.id.theme_food), themeFood, "food");
 
 		animals.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -64,6 +68,12 @@ public class ThemeSelectFragment extends Fragment {
 				Shared.eventBus.notify(new ThemeSelectedEvent(themeFlag));
 			}
 		});
+		food.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Shared.eventBus.notify(new ThemeSelectedEvent(themeFood));
+			}
+		});
 
 		/**
 		 * Imporove performance first!!!
@@ -72,6 +82,7 @@ public class ThemeSelectFragment extends Fragment {
 		animateShow(monsters);
 		animateShow(emoji);
 		animateShow(flag);
+		animateShow(food);
 
 		return view;
 	}

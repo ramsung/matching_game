@@ -3,5 +3,7 @@
 
     <string name="app_name">Memory Game</string>
     <string name="debug">regular</string>
+    <string name="AppId">ca-app-pub-2287984365462163~1823066143</string>
+
 
 </resources>

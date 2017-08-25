@@ -20,7 +20,7 @@
     
     <!-- theme -->
     <dimen name="theme_padding">40dp</dimen>
-    <dimen name="theme_margin">20dp</dimen>
+    <dimen name="theme_margin">10dp</dimen>
     
     <!-- difficulty level -->
     <dimen name="difficulty_padding">40dp</dimen>

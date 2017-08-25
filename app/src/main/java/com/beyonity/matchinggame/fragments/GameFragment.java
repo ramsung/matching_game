@@ -21,6 +21,9 @@ import com.beyonity.matchinggame.utils.Clock;
 import com.beyonity.matchinggame.utils.Clock.OnTimerCount;
 import com.beyonity.matchinggame.utils.FontLoader;
 import com.beyonity.matchinggame.utils.FontLoader.Font;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.NativeExpressAdView;
 
 public class GameFragment extends BaseFragment {
 
@@ -41,6 +44,11 @@ public class GameFragment extends BaseFragment {
 		FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.game_container);
 		frameLayout.addView(mBoardView);
 		frameLayout.setClipChildren(false);
+		AdView mAdView = (AdView) view.findViewById(R.id.adView);
+		AdRequest adRequest = new AdRequest.Builder().build();
+		mAdView.loadAd(adRequest);
+
+
 
 		// build board
 		buildBoard();
