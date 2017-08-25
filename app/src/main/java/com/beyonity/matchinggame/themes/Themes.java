@@ -57,4 +57,17 @@ public class Themes {
 		return bitmap;
 	}
 
+	public static Theme createFlagTheme() {
+		Theme theme = new Theme();
+		theme.id = 4;
+		theme.name = "Flag";
+		theme.backgroundImageUrl = URI_DRAWABLE + "back_city";
+		theme.tileImageUrls = new ArrayList<String>();
+		// 36 drawables
+		for (int i = 1; i <= 36; i++) {
+			theme.tileImageUrls.add(URI_DRAWABLE + String.format("flag_%d", i));
+		}
+		return theme;
+	}
+
 }
