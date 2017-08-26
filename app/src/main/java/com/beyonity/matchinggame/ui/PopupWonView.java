@@ -22,6 +22,7 @@ import com.beyonity.matchinggame.utils.Clock;
 import com.beyonity.matchinggame.utils.Clock.OnTimerCount;
 import com.beyonity.matchinggame.utils.FontLoader;
 import com.beyonity.matchinggame.utils.FontLoader.Font;
+import com.google.android.gms.ads.InterstitialAd;
 
 public class PopupWonView extends RelativeLayout {
 
@@ -33,7 +34,7 @@ public class PopupWonView extends RelativeLayout {
 	private ImageView mNextButton;
 	private ImageView mBackButton;
 	private Handler mHandler;
-
+	private InterstitialAd ad;
 	public PopupWonView(Context context) {
 		this(context, null);
 	}
@@ -67,7 +68,7 @@ public class PopupWonView extends RelativeLayout {
 		});
 	}
 
-	public void setGameState(final GameState gameState) {
+	public void setGameState(final GameState gameState,InterstitialAd ad) {
 		int min = gameState.remainedSeconds / 60;
 		int sec = gameState.remainedSeconds - min * 60;
 		mTime.setText(" " + String.format("%02d", min) + ":" + String.format("%02d", sec));
@@ -81,6 +82,7 @@ public class PopupWonView extends RelativeLayout {
 				animateStars(gameState.achievedStars);
 			}
 		}, 500);
+		this.ad = ad;
 	}
 
 	private void animateStars(int start) {
@@ -163,6 +165,11 @@ public class PopupWonView extends RelativeLayout {
 			public void onFinish() {
 				mTime.setText(" " + String.format("%02d", 0) + ":" + String.format("%02d", 0));
 				mScore.setText("" + achievedScore);
+				if(ad.isLoaded()){
+					ad.show();
+				}
+
+
 			}
 		});
 

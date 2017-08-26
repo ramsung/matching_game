@@ -5,6 +5,7 @@ import android.animation.AnimatorSet.Builder;
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,9 @@ import com.beyonity.matchinggame.common.Shared;
 import com.beyonity.matchinggame.events.ui.DifficultySelectedEvent;
 import com.beyonity.matchinggame.themes.Theme;
 import com.beyonity.matchinggame.ui.DifficultyView;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 
 public class DifficultySelectFragment extends Fragment {
 
@@ -23,6 +27,7 @@ public class DifficultySelectFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = LayoutInflater.from(Shared.context).inflate(R.layout.difficulty_select_fragment, container, false);
 		Theme theme = Shared.engine.getSelectedTheme();
+
 
 		DifficultyView difficulty1 = (DifficultyView) view.findViewById(R.id.select_difficulty_1);
 		difficulty1.setDifficulty(1, Memory.getHighStars(theme.id, 1));

@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
@@ -15,6 +16,9 @@ import android.widget.RelativeLayout.LayoutParams;
 import com.beyonity.matchinggame.R;
 import com.beyonity.matchinggame.common.Shared;
 import com.beyonity.matchinggame.model.GameState;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 
 public class PopupManager {
 	
@@ -48,13 +52,13 @@ public class PopupManager {
 		animatorSet.start();
 	}
 
-	public static void showPopupWon(GameState gameState) {
+	public static void showPopupWon(GameState gameState,InterstitialAd ad) {
 		RelativeLayout popupContainer = (RelativeLayout) Shared.activity.findViewById(R.id.popup_container);
 		popupContainer.removeAllViews();
 
 		// popup
 		PopupWonView popupWonView = new PopupWonView(Shared.context);
-		popupWonView.setGameState(gameState);
+		popupWonView.setGameState(gameState,ad);
 		int width = Shared.context.getResources().getDimensionPixelSize(R.dimen.popup_won_width);
 		int height = Shared.context.getResources().getDimensionPixelSize(R.dimen.popup_won_height);
 		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(width, height);
@@ -70,6 +74,8 @@ public class PopupManager {
 		animatorSet.setInterpolator(new DecelerateInterpolator(2));
 		popupWonView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
 		animatorSet.start();
+
+
 	}
 
 	public static void closePopup() {
