@@ -5,5 +5,8 @@
     <string name="debug">regular</string>
     <string name="AppId">ca-app-pub-2287984365462163~1823066143</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>

@@ -117,6 +117,43 @@ public class Themes {
 		}
 		return theme;
 	}
+	public static Theme createDrinksTheme() {
+		Theme theme = new Theme();
+		theme.id = 9;
+		theme.name = "Drinks";
+		theme.backgroundImageUrl = URI_DRAWABLE + "back_drinks";
+		theme.tileImageUrls = new ArrayList<String>();
+		// 36 drawables
+		for (int i = 1; i <= 27; i++) {
+			theme.tileImageUrls.add(URI_DRAWABLE + String.format("drinks_%d", i));
+		}
+		return theme;
+	}
+	public static Theme createCommTheme() {
+		Theme theme = new Theme();
+		theme.id = 10;
+		theme.name = "Comm";
+		theme.backgroundImageUrl = URI_DRAWABLE + "back_comm";
+		theme.tileImageUrls = new ArrayList<String>();
+		// 36 drawables
+		for (int i = 1; i <= 28; i++) {
+			theme.tileImageUrls.add(URI_DRAWABLE + String.format("comm_%d", i));
+		}
+		return theme;
+	}
+	public static Theme createCommerceTheme() {
+		Theme theme = new Theme();
+		theme.id = 11;
+		theme.name = "Commerce";
+		theme.backgroundImageUrl = URI_DRAWABLE + "back_commerce";
+		theme.tileImageUrls = new ArrayList<String>();
+		// 36 drawables
+		for (int i = 1; i <= 24; i++) {
+			theme.tileImageUrls.add(URI_DRAWABLE + String.format("commerce_%d", i));
+		}
+		return theme;
+	}
+
 
 
 

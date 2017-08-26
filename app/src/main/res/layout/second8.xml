@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              xmlns:ads="http://schemas.android.com/apk/res-auto"
+              android:gravity="center"
+
+              android:orientation="vertical"
+              android:paddingLeft="@dimen/theme_padding"
+              android:paddingRight="@dimen/theme_padding">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:id="@+id/theme_drinks_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/theme_margin"
+            android:layout_weight="3" >
+
+            <ImageView
+                android:id="@+id/theme_drinks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/drinks_theme_star_0" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/theme_comm_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/theme_margin"
+            android:layout_weight="3">
+
+            <ImageView
+                android:id="@+id/theme_comm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/comm_theme_star_0" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/theme_add_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/theme_margin"
+            android:layout_weight="3" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+                <com.google.android.gms.ads.NativeExpressAdView
+                    android:id="@+id/adView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    ads:adUnitId="ca-app-pub-3940256099942544/2177258514"
+
+                    ads:adSize="280x100">
+                </com.google.android.gms.ads.NativeExpressAdView>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/theme_commerce_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/theme_margin"
+            android:layout_weight="3" >
+
+            <ImageView
+                android:id="@+id/theme_commerce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/commerce_theme_star_0" />
+        </RelativeLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:id="@+id/theme_flag_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/theme_margin"
+            android:layout_weight="3" >
+
+            <ImageView
+                android:id="@+id/theme_flag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/flag_theme_star_0" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/theme_food_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/theme_margin"
+            android:layout_weight="3">
+
+            <ImageView
+                android:id="@+id/theme_food"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/food_theme_star_0" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/theme_veg_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/theme_margin"
+            android:layout_weight="3" >
+
+            <ImageView
+                android:id="@+id/theme_veg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/veg_theme_star_0" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/theme_fruits_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/theme_margin"
+            android:layout_weight="3" >
+
+            <ImageView
+                android:id="@+id/theme_fruits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/fruits_theme_star_0" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

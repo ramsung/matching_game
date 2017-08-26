@@ -3,7 +3,10 @@ package com.beyonity.matchinggame.fragments;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +14,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 
 import com.beyonity.matchinggame.R;
+import com.beyonity.matchinggame.adapter.ThemePagerAdapter;
 import com.beyonity.matchinggame.common.Memory;
 import com.beyonity.matchinggame.common.Shared;
 import com.beyonity.matchinggame.events.ui.ThemeSelectedEvent;
@@ -20,12 +24,13 @@ import com.beyonity.matchinggame.themes.Themes;
 import java.util.Locale;
 
 public class ThemeSelectFragment extends Fragment {
-
+	ViewPager viewPager;
+	ImageView dots;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View view = LayoutInflater.from(Shared.context).inflate(R.layout.theme_select_fragment, container, false);
+		View view = LayoutInflater.from(Shared.context).inflate(R.layout.fragment_theme, container, false);
 		//themes
-		View animals = view.findViewById(R.id.theme_animals_container);
+		/*View animals = view.findViewById(R.id.theme_animals_container);
 		View monsters = view.findViewById(R.id.theme_monsters_container);
 		View emoji = view.findViewById(R.id.theme_emoji_container);
 		View trans = view.findViewById(R.id.theme_trans_container);
@@ -103,9 +108,7 @@ public class ThemeSelectFragment extends Fragment {
 			}
 		});
 
-		/**
-		 * Imporove performance first!!!
-		 */
+
 		animateShow(animals);
 		animateShow(monsters);
 		animateShow(emoji);
@@ -114,7 +117,38 @@ public class ThemeSelectFragment extends Fragment {
 		animateShow(flag);
 		animateShow(food);
 		animateShow(veg);
-		animateShow(fruits);
+		animateShow(fruits);*/
+		dots = (ImageView) view.findViewById(R.id.dots);
+		viewPager =(ViewPager) view.findViewById(R.id.viewPager);
+		viewPager.setAdapter(new ThemePagerAdapter(getChildFragmentManager(),4));
+		viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+			@Override
+			public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+			}
+
+			@Override
+			public void onPageSelected(int position) {
+				if(position == 0){
+
+					dots.setImageResource(R.drawable.first);
+				}else if(position == 1){
+
+					dots.setImageResource(R.drawable.second);
+				}else if(position == 2){
+
+					dots.setImageResource(R.drawable.third);
+				}else if(position == 3){
+
+					dots.setImageResource(R.drawable.fourth);
+				}
+			}
+
+			@Override
+			public void onPageScrollStateChanged(int state) {
+
+			}
+		});
 
 
 		return view;
