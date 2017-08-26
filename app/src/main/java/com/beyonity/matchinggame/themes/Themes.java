@@ -56,10 +56,21 @@ public class Themes {
 		Bitmap bitmap = Utils.scaleDown(drawableResourceId, Utils.screenWidth(), Utils.screenHeight());
 		return bitmap;
 	}
-
-	public static Theme createFlagTheme() {
+	public static Theme createTransTheme() {
 		Theme theme = new Theme();
 		theme.id = 4;
+		theme.name = "Trans";
+		theme.backgroundImageUrl = URI_DRAWABLE + "back_trans";
+		theme.tileImageUrls = new ArrayList<String>();
+		// 36 drawables
+		for (int i = 1; i <= 25; i++) {
+			theme.tileImageUrls.add(URI_DRAWABLE + String.format("trans_%d", i));
+		}
+		return theme;
+	}
+	public static Theme createFlagTheme() {
+		Theme theme = new Theme();
+		theme.id = 5;
 		theme.name = "Flag";
 		theme.backgroundImageUrl = URI_DRAWABLE + "back_city";
 		theme.tileImageUrls = new ArrayList<String>();
@@ -72,7 +83,7 @@ public class Themes {
 
 	public static Theme createFoodTheme() {
 		Theme theme = new Theme();
-		theme.id = 5;
+		theme.id = 6;
 		theme.name = "Food";
 		theme.backgroundImageUrl = URI_DRAWABLE + "back_food";
 		theme.tileImageUrls = new ArrayList<String>();
@@ -82,5 +93,34 @@ public class Themes {
 		}
 		return theme;
 	}
+	public static Theme createVegTheme() {
+		Theme theme = new Theme();
+		theme.id = 7;
+		theme.name = "Veg";
+		theme.backgroundImageUrl = URI_DRAWABLE + "back_veg";
+		theme.tileImageUrls = new ArrayList<String>();
+		// 36 drawables
+		for (int i = 1; i <= 21; i++) {
+			theme.tileImageUrls.add(URI_DRAWABLE + String.format("veg_%d", i));
+		}
+		return theme;
+	}
+	public static Theme createFruitsTheme() {
+		Theme theme = new Theme();
+		theme.id = 8;
+		theme.name = "Fruits";
+		theme.backgroundImageUrl = URI_DRAWABLE + "back_fruits";
+		theme.tileImageUrls = new ArrayList<String>();
+		// 36 drawables
+		for (int i = 1; i <= 20; i++) {
+			theme.tileImageUrls.add(URI_DRAWABLE + String.format("fruits_%d", i));
+		}
+		return theme;
+	}
+
+
+
+
+
 
 }

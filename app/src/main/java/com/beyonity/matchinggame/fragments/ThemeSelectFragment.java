@@ -24,11 +24,15 @@ public class ThemeSelectFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = LayoutInflater.from(Shared.context).inflate(R.layout.theme_select_fragment, container, false);
+		//themes
 		View animals = view.findViewById(R.id.theme_animals_container);
 		View monsters = view.findViewById(R.id.theme_monsters_container);
 		View emoji = view.findViewById(R.id.theme_emoji_container);
+		View trans = view.findViewById(R.id.theme_trans_container);
 		View flag = view.findViewById(R.id.theme_flag_container);
 		View food = view.findViewById(R.id.theme_food_container);
+		View veg = view.findViewById(R.id.theme_veg_container);
+		View fruits = view.findViewById(R.id.theme_fruits_container);
 
 		final Theme themeAnimals = Themes.createAnimalsTheme();
 		setStars((ImageView) animals.findViewById(R.id.theme_animals), themeAnimals, "animals");
@@ -36,11 +40,16 @@ public class ThemeSelectFragment extends Fragment {
 		setStars((ImageView) monsters.findViewById(R.id.theme_monsters), themeMonsters, "monsters");
 		final Theme themeEmoji = Themes.createEmojiTheme();
 		setStars((ImageView) emoji.findViewById(R.id.theme_emoji), themeEmoji, "emoji");
+		final Theme themeTrans = Themes.createTransTheme();
+		setStars((ImageView) trans.findViewById(R.id.theme_trans), themeEmoji, "trans");
 		final Theme themeFlag = Themes.createFlagTheme();
 		setStars((ImageView) flag.findViewById(R.id.theme_flag), themeFlag, "flag");
 		final Theme themeFood = Themes.createFoodTheme();
-		setStars((ImageView) food
-				.findViewById(R.id.theme_food), themeFood, "food");
+		setStars((ImageView) food.findViewById(R.id.theme_food), themeFood, "food");
+		final Theme themeVeg = Themes.createVegTheme();
+		setStars((ImageView) veg.findViewById(R.id.theme_veg), themeFood, "veg");
+		final Theme themeFruits = Themes.createFruitsTheme();
+		setStars((ImageView) fruits.findViewById(R.id.theme_fruits), themeFood, "fruits");
 
 		animals.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -62,6 +71,13 @@ public class ThemeSelectFragment extends Fragment {
 				Shared.eventBus.notify(new ThemeSelectedEvent(themeEmoji));
 			}
 		});
+		trans.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Shared.eventBus.notify(new ThemeSelectedEvent(themeTrans));
+			}
+		});
+
 		flag.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -74,6 +90,18 @@ public class ThemeSelectFragment extends Fragment {
 				Shared.eventBus.notify(new ThemeSelectedEvent(themeFood));
 			}
 		});
+		veg.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Shared.eventBus.notify(new ThemeSelectedEvent(themeVeg));
+			}
+		});
+		fruits.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Shared.eventBus.notify(new ThemeSelectedEvent(themeFruits));
+			}
+		});
 
 		/**
 		 * Imporove performance first!!!
@@ -81,8 +109,13 @@ public class ThemeSelectFragment extends Fragment {
 		animateShow(animals);
 		animateShow(monsters);
 		animateShow(emoji);
+		animateShow(trans);
+
 		animateShow(flag);
 		animateShow(food);
+		animateShow(veg);
+		animateShow(fruits);
+
 
 		return view;
 	}

@@ -58,7 +58,20 @@
                 android:src="@drawable/emoji_theme_star_0" />
         </RelativeLayout>
 
+        <RelativeLayout
+            android:id="@+id/theme_trans_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/theme_margin"
+            android:layout_weight="3" >
 
+            <ImageView
+                android:id="@+id/theme_trans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/trans_theme_star_0" />
+        </RelativeLayout>
 
     </LinearLayout>
     <LinearLayout
@@ -109,9 +122,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/emoji_theme_star_0" />
+                android:src="@drawable/veg_theme_star_0" />
         </RelativeLayout>
 
+        <RelativeLayout
+            android:id="@+id/theme_fruits_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/theme_margin"
+            android:layout_weight="3" >
+
+            <ImageView
+                android:id="@+id/theme_fruits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/fruits_theme_star_0" />
+        </RelativeLayout>
 
 
     </LinearLayout>
