@@ -22,7 +22,7 @@ public class MainActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		MobileAds.initialize(this, "ca-app-pub-2287984365462163~1823066143");
+		MobileAds.initialize(this, "ca-app-pub-7987343674758455~6668446139");
 		Shared.context = getApplicationContext();
 		Shared.engine = Engine.getInstance();
 		Shared.eventBus = EventBus.getInstance();
