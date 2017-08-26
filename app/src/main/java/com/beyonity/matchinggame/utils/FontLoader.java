@@ -7,13 +7,13 @@ import android.widget.TextView;
 
 public class FontLoader {
 
-	public static final int GROBOLD = 0;
+	public static final int MandroidBB = 0;
 
 	private static SparseArray<Typeface> fonts = new SparseArray<Typeface>();
 	private static boolean fontsLoaded = false;
 
 	public static enum Font {
-		GROBOLD(FontLoader.GROBOLD, "fonts/grobold.ttf");
+		MandroidBB(FontLoader.MandroidBB, "fonts/MandroidBB.ttf");
 
 		private int val;
 		private String path;

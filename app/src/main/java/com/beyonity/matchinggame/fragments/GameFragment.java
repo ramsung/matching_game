@@ -39,7 +39,7 @@ public class GameFragment extends BaseFragment {
 		((ViewGroup)view.findViewById(R.id.game_board)).setClipChildren(false);
 		mTime = (TextView) view.findViewById(R.id.time_bar_text);
 		mTimeImage = (ImageView) view.findViewById(R.id.time_bar_image);
-		FontLoader.setTypeface(Shared.context, new TextView[] {mTime}, Font.GROBOLD);
+		FontLoader.setTypeface(Shared.context, new TextView[] {mTime}, Font.MandroidBB);
 		mBoardView = BoardView.fromXml(getActivity().getApplicationContext(), view);
 		FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.game_container);
 		frameLayout.addView(mBoardView);

@@ -32,7 +32,7 @@ public class PopupSettingsView extends LinearLayout {
 		LayoutInflater.from(getContext()).inflate(R.layout.popup_settings_view, this, true);
 		mSoundText = (TextView) findViewById(R.id.sound_off_text);
 		TextView rateView = (TextView) findViewById(R.id.rate_text);
-		FontLoader.setTypeface(context, new TextView[] { mSoundText, rateView }, Font.GROBOLD);
+		FontLoader.setTypeface(context, new TextView[] { mSoundText, rateView }, Font.MandroidBB);
 		mSoundImage = (ImageView) findViewById(R.id.sound_image);
 		View soundOff = findViewById(R.id.sound_off);
 		soundOff.setOnClickListener(new View.OnClickListener() {

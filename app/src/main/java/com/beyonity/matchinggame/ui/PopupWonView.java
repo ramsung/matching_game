@@ -48,7 +48,7 @@ public class PopupWonView extends RelativeLayout {
 		mStar3 = (ImageView) findViewById(R.id.star_3);
 		mBackButton = (ImageView) findViewById(R.id.button_back);
 		mNextButton = (ImageView) findViewById(R.id.button_next);
-		FontLoader.setTypeface(context, new TextView[] { mTime, mScore }, Font.GROBOLD);
+		FontLoader.setTypeface(context, new TextView[] { mTime, mScore }, Font.MandroidBB);
 		setBackgroundResource(R.drawable.level_complete);
 		mHandler = new Handler();
 		
