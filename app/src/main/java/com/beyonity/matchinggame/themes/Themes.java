@@ -116,7 +116,7 @@ public class Themes {
 		theme.backgroundImageUrl = URI_DRAWABLE + "back_fruits";
 		theme.tileImageUrls = new ArrayList<String>();
 		// 36 drawables
-		for (int i = 1; i <= 20; i++) {
+		for (int i = 1; i <= 25; i++) {
 			theme.tileImageUrls.add(URI_DRAWABLE + String.format("fruits_%d", i));
 		}
 		return theme;
