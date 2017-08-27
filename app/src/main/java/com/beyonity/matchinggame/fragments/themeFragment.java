@@ -54,10 +54,10 @@ public class themeFragment extends Fragment
             return first;
         }else if (Integer.parseInt(content) == 1){
 	        setSecondPage(second);
-	        NativeExpressAdView adView = (NativeExpressAdView)second.findViewById(R.id.adView);
+	      /*  NativeExpressAdView adView = (NativeExpressAdView)second.findViewById(R.id.adView);
 
 	        AdRequest request = new AdRequest.Builder().build();
-	        adView.loadAd(request);
+	        adView.loadAd(request);*/
 
 
             return second;

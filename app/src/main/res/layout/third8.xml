@@ -13,64 +13,64 @@
         android:gravity="center"
         android:orientation="horizontal">
         <RelativeLayout
-            android:id="@+id/theme_animals_container"
+            android:id="@+id/theme_farm_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/theme_margin"
             android:layout_weight="3" >
 
             <ImageView
-                android:id="@+id/theme_animals"
+                android:id="@+id/theme_farm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/animals_theme_star_0" />
+                android:src="@drawable/farm_theme_star_0" />
 
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/theme_monsters_container"
+            android:id="@+id/theme_furn_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/theme_margin"
             android:layout_weight="3">
 
             <ImageView
-                android:id="@+id/theme_monsters"
+                android:id="@+id/theme_furn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/monsters_theme_star_0" />
+                android:src="@drawable/furn_theme_star_0" />
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/theme_emoji_container"
+            android:id="@+id/theme_gest_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/theme_margin"
             android:layout_weight="3" >
 
             <ImageView
-                android:id="@+id/theme_emoji"
+                android:id="@+id/theme_gest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/emoji_theme_star_0" />
+                android:src="@drawable/gest_theme_star_0" />
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/theme_trans_container"
+            android:id="@+id/theme_hobb_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/theme_margin"
             android:layout_weight="3" >
 
             <ImageView
-                android:id="@+id/theme_trans"
+                android:id="@+id/theme_hobb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/trans_theme_star_0" />
+                android:src="@drawable/hobb_theme_star_0" />
         </RelativeLayout>
 
     </LinearLayout>
@@ -80,64 +80,64 @@
         android:gravity="center"
         android:orientation="horizontal">
         <RelativeLayout
-            android:id="@+id/theme_flag_container"
+            android:id="@+id/theme_kid_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/theme_margin"
             android:layout_weight="3" >
 
             <ImageView
-                android:id="@+id/theme_flag"
+                android:id="@+id/theme_kid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/flag_theme_star_0" />
+                android:src="@drawable/kids_theme_star_0" />
 
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/theme_food_container"
+            android:id="@+id/theme_med_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/theme_margin"
             android:layout_weight="3">
 
             <ImageView
-                android:id="@+id/theme_food"
+                android:id="@+id/theme_med"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/food_theme_star_0" />
+                android:src="@drawable/med_theme_star_0" />
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/theme_veg_container"
+            android:id="@+id/theme_monu_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/theme_margin"
             android:layout_weight="3" >
 
             <ImageView
-                android:id="@+id/theme_veg"
+                android:id="@+id/theme_monu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/veg_theme_star_0" />
+                android:src="@drawable/monu_theme_star_0" />
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/theme_fruits_container"
+            android:id="@+id/theme_sport_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/theme_margin"
             android:layout_weight="3" >
 
             <ImageView
-                android:id="@+id/theme_fruits"
+                android:id="@+id/theme_sport"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/fruits_theme_star_0" />
+                android:src="@drawable/sport_theme_star_0" />
         </RelativeLayout>
 
 
