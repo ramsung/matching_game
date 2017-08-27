@@ -120,7 +120,7 @@ public class ThemeSelectFragment extends Fragment {
 		animateShow(fruits);*/
 		dots = (ImageView) view.findViewById(R.id.dots);
 		viewPager =(ViewPager) view.findViewById(R.id.viewPager);
-		viewPager.setAdapter(new ThemePagerAdapter(getChildFragmentManager(),4));
+		viewPager.setAdapter(new ThemePagerAdapter(getChildFragmentManager(),3));
 		viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 			@Override
 			public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -138,9 +138,6 @@ public class ThemeSelectFragment extends Fragment {
 				}else if(position == 2){
 
 					dots.setImageResource(R.drawable.third);
-				}else if(position == 3){
-
-					dots.setImageResource(R.drawable.fourth);
 				}
 			}
 

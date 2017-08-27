@@ -22,12 +22,13 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 
 public class DifficultySelectFragment extends Fragment {
+	private static final String TAG = "DifficultySelectFragmen";
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = LayoutInflater.from(Shared.context).inflate(R.layout.difficulty_select_fragment, container, false);
 		Theme theme = Shared.engine.getSelectedTheme();
-
+		Log.i(TAG, "onCreateView: "+String.valueOf(Shared.engine.getSelectedTheme().name));
 
 		DifficultyView difficulty1 = (DifficultyView) view.findViewById(R.id.select_difficulty_1);
 		difficulty1.setDifficulty(1, Memory.getHighStars(theme.id, 1));
