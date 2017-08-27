@@ -116,7 +116,7 @@ public class Themes {
 		theme.backgroundImageUrl = URI_DRAWABLE + "back_fruits";
 		theme.tileImageUrls = new ArrayList<String>();
 		// 36 drawables
-		for (int i = 1; i <= 20; i++) {
+		for (int i = 1; i <= 25; i++) {
 			theme.tileImageUrls.add(URI_DRAWABLE + String.format("fruits_%d", i));
 		}
 		return theme;
@@ -129,7 +129,7 @@ public class Themes {
 		theme.backgroundImageUrl = URI_DRAWABLE + "back_drinks";
 		theme.tileImageUrls = new ArrayList<String>();
 		// 36 drawables
-		for (int i = 1; i <= 27; i++) {
+		for (int i = 1; i <= 25; i++) {
 			theme.tileImageUrls.add(URI_DRAWABLE + String.format("drinks_%d", i));
 		}
 		return theme;
@@ -155,7 +155,7 @@ public class Themes {
 		theme.backgroundImageUrl = URI_DRAWABLE + "back_commerce";
 		theme.tileImageUrls = new ArrayList<String>();
 		// 36 drawables
-		for (int i = 1; i <= 24; i++) {
+		for (int i = 1; i <= 25; i++) {
 			theme.tileImageUrls.add(URI_DRAWABLE + String.format("commerce_%d", i));
 		}
 		return theme;
@@ -169,7 +169,7 @@ public class Themes {
 		theme.backgroundImageUrl = URI_DRAWABLE + "back_comp";
 		theme.tileImageUrls = new ArrayList<String>();
 		// 36 drawables
-		for (int i = 1; i <= 24; i++) {
+		for (int i = 1; i <= 25; i++) {
 			theme.tileImageUrls.add(URI_DRAWABLE + String.format("comp_%d", i));
 		}
 		return theme;
@@ -182,7 +182,7 @@ public class Themes {
 		theme.backgroundImageUrl = URI_DRAWABLE + "back_construct";
 		theme.tileImageUrls = new ArrayList<String>();
 		// 36 drawables
-		for (int i = 1; i <= 24; i++) {
+		for (int i = 1; i <= 25; i++) {
 			theme.tileImageUrls.add(URI_DRAWABLE + String.format("construct_%d", i));
 		}
 		return theme;
@@ -195,7 +195,7 @@ public class Themes {
 		theme.backgroundImageUrl = URI_DRAWABLE + "back_edu";
 		theme.tileImageUrls = new ArrayList<String>();
 		// 36 drawables
-		for (int i = 1; i <= 24; i++) {
+		for (int i = 1; i <= 25; i++) {
 			theme.tileImageUrls.add(URI_DRAWABLE + String.format("edu_%d", i));
 		}
 		return theme;
@@ -208,7 +208,7 @@ public class Themes {
 		theme.backgroundImageUrl = URI_DRAWABLE + "back_elc";
 		theme.tileImageUrls = new ArrayList<String>();
 		// 36 drawables
-		for (int i = 1; i <= 24; i++) {
+		for (int i = 1; i <= 25; i++) {
 			theme.tileImageUrls.add(URI_DRAWABLE + String.format("elc_%d", i));
 		}
 		return theme;
@@ -221,7 +221,7 @@ public class Themes {
 		theme.backgroundImageUrl = URI_DRAWABLE + "back_entertain";
 		theme.tileImageUrls = new ArrayList<String>();
 		// 36 drawables
-		for (int i = 1; i <= 24; i++) {
+		for (int i = 1; i <= 25; i++) {
 			theme.tileImageUrls.add(URI_DRAWABLE + String.format("entertain_%d", i));
 		}
 		return theme;
@@ -233,7 +233,7 @@ public class Themes {
 		theme.backgroundImageUrl = URI_DRAWABLE + "back_farm";
 		theme.tileImageUrls = new ArrayList<String>();
 		// 36 drawables
-		for (int i = 1; i <= 24; i++) {
+		for (int i = 1; i <= 25; i++) {
 			theme.tileImageUrls.add(URI_DRAWABLE + String.format("farm_%d", i));
 		}
 		return theme;
@@ -245,7 +245,7 @@ public class Themes {
 		theme.backgroundImageUrl = URI_DRAWABLE + "back_furn";
 		theme.tileImageUrls = new ArrayList<String>();
 		// 36 drawables
-		for (int i = 1; i <= 24; i++) {
+		for (int i = 1; i <= 25; i++) {
 			theme.tileImageUrls.add(URI_DRAWABLE + String.format("furn_%d", i));
 		}
 		return theme;
@@ -257,7 +257,7 @@ public class Themes {
 		theme.backgroundImageUrl = URI_DRAWABLE + "back_gest";
 		theme.tileImageUrls = new ArrayList<String>();
 		// 36 drawables
-		for (int i = 1; i <= 24; i++) {
+		for (int i = 1; i <= 25; i++) {
 			theme.tileImageUrls.add(URI_DRAWABLE + String.format("gest_%d", i));
 		}
 		return theme;
@@ -270,7 +270,7 @@ public class Themes {
 		theme.backgroundImageUrl = URI_DRAWABLE + "back_hobb";
 		theme.tileImageUrls = new ArrayList<String>();
 		// 36 drawables
-		for (int i = 1; i <= 24; i++) {
+		for (int i = 1; i <= 25; i++) {
 			theme.tileImageUrls.add(URI_DRAWABLE + String.format("hobb_%d", i));
 		}
 		return theme;
@@ -283,7 +283,7 @@ public class Themes {
 		theme.backgroundImageUrl = URI_DRAWABLE + "back_kids";
 		theme.tileImageUrls = new ArrayList<String>();
 		// 36 drawables
-		for (int i = 1; i <= 24; i++) {
+		for (int i = 1; i <= 25; i++) {
 			theme.tileImageUrls.add(URI_DRAWABLE + String.format("kids_%d", i));
 		}
 		return theme;
@@ -295,7 +295,7 @@ public class Themes {
 		theme.backgroundImageUrl = URI_DRAWABLE + "back_med";
 		theme.tileImageUrls = new ArrayList<String>();
 		// 36 drawables
-		for (int i = 1; i <= 24; i++) {
+		for (int i = 1; i <= 25; i++) {
 			theme.tileImageUrls.add(URI_DRAWABLE + String.format("med_%d", i));
 		}
 		return theme;
@@ -308,7 +308,7 @@ public class Themes {
 		theme.backgroundImageUrl = URI_DRAWABLE + "back_monu";
 		theme.tileImageUrls = new ArrayList<String>();
 		// 36 drawables
-		for (int i = 1; i <= 24; i++) {
+		for (int i = 1; i <= 25; i++) {
 			theme.tileImageUrls.add(URI_DRAWABLE + String.format("monu_%d", i));
 		}
 		return theme;
@@ -317,12 +317,12 @@ public class Themes {
 
 	public static Theme createSportTheme() {
 		Theme theme = new Theme();
-		theme.id = 24;
+		theme.id = 25;
 		theme.name = "Sport";
 		theme.backgroundImageUrl = URI_DRAWABLE + "back_sport";
 		theme.tileImageUrls = new ArrayList<String>();
 		// 36 drawables
-		for (int i = 1; i <= 24; i++) {
+		for (int i = 1; i <= 25; i++) {
 			theme.tileImageUrls.add(URI_DRAWABLE + String.format("sport_%d", i));
 		}
 		return theme;
