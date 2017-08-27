@@ -25,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/drinks_theme_star_0" />
+                android:src="@drawable/drinks_theme_star_lock" />
 
         </RelativeLayout>
 
@@ -41,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/comm_theme_star_0" />
+                android:src="@drawable/comm_theme_star_lock" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -51,14 +51,14 @@
             android:layout_margin="@dimen/theme_margin"
             android:layout_weight="3" >
 
-            android:layout_weight="3" >
+
 
             <ImageView
                 android:id="@+id/theme_commerce"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/commerce_theme_star_0" />
+                android:src="@drawable/commerce_theme_star_lock" />
         </RelativeLayout>
 
 
@@ -75,7 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/comp_theme_star_0" />
+                android:src="@drawable/comp_theme_star_lock" />
         </RelativeLayout>
 
     </LinearLayout>
@@ -96,7 +96,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/construct_theme_star_0" />
+                android:src="@drawable/construct_theme_star_lock" />
 
         </RelativeLayout>
 
@@ -112,7 +112,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/edu_theme_star_0" />
+                android:src="@drawable/edu_theme_star_lock" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -127,7 +127,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/elec_theme_star_0" />
+                android:src="@drawable/elec_theme_star_lock" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -142,7 +142,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/entertain_theme_star_0" />
+                android:src="@drawable/entertain_theme_star_lock" />
         </RelativeLayout>
 
 

@@ -103,7 +103,7 @@ public class Themes {
 		theme.backgroundImageUrl = URI_DRAWABLE + "back_veg";
 		theme.tileImageUrls = new ArrayList<String>();
 		// 36 drawables
-		for (int i = 1; i <= 21; i++) {
+		for (int i = 1; i <= 25; i++) {
 			theme.tileImageUrls.add(URI_DRAWABLE + String.format("veg_%d", i));
 		}
 		return theme;

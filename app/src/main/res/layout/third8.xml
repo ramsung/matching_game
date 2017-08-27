@@ -24,7 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/farm_theme_star_0" />
+                android:src="@drawable/farm_theme_star_lock" />
 
         </RelativeLayout>
 
@@ -40,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/furn_theme_star_0" />
+                android:src="@drawable/furn_theme_star_lock" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -55,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/gest_theme_star_0" />
+                android:src="@drawable/gest_theme_star_lock" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -70,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/hobb_theme_star_0" />
+                android:src="@drawable/hobb_theme_star_lock" />
         </RelativeLayout>
 
     </LinearLayout>
@@ -91,7 +91,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/kids_theme_star_0" />
+                android:src="@drawable/kids_theme_star_lock" />
 
         </RelativeLayout>
 
@@ -107,7 +107,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/med_theme_star_0" />
+                android:src="@drawable/med_theme_star_lock" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -122,7 +122,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/monu_theme_star_0" />
+                android:src="@drawable/monu_theme_star_lock" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -137,7 +137,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/sport_theme_star_0" />
+                android:src="@drawable/sport_theme_star_lock" />
         </RelativeLayout>
 
 

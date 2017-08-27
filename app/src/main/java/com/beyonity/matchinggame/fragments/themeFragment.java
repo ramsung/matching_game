@@ -205,83 +205,110 @@ public class themeFragment extends Fragment {
 		View electronics = view.findViewById(R.id.theme_elec_container);
 		View entertainment = view.findViewById(R.id.theme_entertain_container);
 
+		if(GetThemeScore.getScore(8)==3){
+			final Theme themeDrinks = Themes.createDrinksTheme();
+			setStars((ImageView) drinks.findViewById(R.id.theme_drinks), themeDrinks, "drinks");
+			drinks.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Shared.eventBus.notify(new ThemeSelectedEvent(themeDrinks));
+				}
+			});
+			animateShow(drinks);
+		}else return;
 
-		final Theme themeDrinks = Themes.createDrinksTheme();
-		setStars((ImageView) drinks.findViewById(R.id.theme_drinks), themeDrinks, "drinks");
-		final Theme themeComm = Themes.createCommTheme();
-		setStars((ImageView) comm.findViewById(R.id.theme_comm), themeComm, "comm");
-		final Theme themeCommerce = Themes.createCommerceTheme();
-		setStars((ImageView) commerce.findViewById(R.id.theme_commerce), themeCommerce, "commerce");
-		final Theme themeComputer = Themes.createCompTheme();
-		setStars((ImageView) computer.findViewById(R.id.theme_comp), themeComputer, "comp");
-		final Theme themeConstruction = Themes.createConstructTheme();
-		setStars((ImageView) construction.findViewById(R.id.theme_construct), themeConstruction, "construct");
-		final Theme themeEducation = Themes.createEduTheme();
-		setStars((ImageView) education.findViewById(R.id.theme_edu), themeEducation, "edu");
-		final Theme themeElectronics = Themes.createElcTheme();
-		setStars((ImageView) electronics.findViewById(R.id.theme_elec), themeElectronics, "elec");
-		final Theme themeEntertainment = Themes.createEntertainTheme();
-		setStars((ImageView) entertainment.findViewById(R.id.theme_entertain), themeEntertainment, "entertain");
+		if(GetThemeScore.getScore(9)==3) {
+			final Theme themeComm = Themes.createCommTheme();
+			setStars((ImageView) comm.findViewById(R.id.theme_comm), themeComm, "comm");
+			comm.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Shared.eventBus.notify(new ThemeSelectedEvent(themeComm));
+				}
+			});
+			animateShow(comm);
+		}else return;
+
+		if(GetThemeScore.getScore(10)==3) {
+			final Theme themeCommerce = Themes.createCommerceTheme();
+			setStars((ImageView) commerce.findViewById(R.id.theme_commerce), themeCommerce, "commerce");
+			commerce.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Shared.eventBus.notify(new ThemeSelectedEvent(themeCommerce));
+				}
+			});
+			animateShow(commerce);
+		}else return;
+
+		if(GetThemeScore.getScore(11)==3) {
+			final Theme themeComputer = Themes.createCompTheme();
+			setStars((ImageView) computer.findViewById(R.id.theme_comp), themeComputer, "comp");
+			computer.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Shared.eventBus.notify(new ThemeSelectedEvent(themeComputer));
+				}
+			});
+			animateShow(computer);
+		}else return;
+
+		if(GetThemeScore.getScore(12)==3) {
+			final Theme themeConstruction = Themes.createConstructTheme();
+			setStars((ImageView) construction.findViewById(R.id.theme_construct), themeConstruction, "construct");
+			construction.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Shared.eventBus.notify(new ThemeSelectedEvent(themeConstruction));
+				}
+			});
+			animateShow(construction);
+		}else return;
+
+		if(GetThemeScore.getScore(13)==3) {
+			final Theme themeEducation = Themes.createEduTheme();
+			setStars((ImageView) education.findViewById(R.id.theme_edu), themeEducation, "edu");
+
+			education.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Shared.eventBus.notify(new ThemeSelectedEvent(themeEducation));
+				}
+			});
+			animateShow(education);
+		}else return;
+
+		if(GetThemeScore.getScore(14)==3) {
+			final Theme themeElectronics = Themes.createElcTheme();
+			setStars((ImageView) electronics.findViewById(R.id.theme_elec), themeElectronics, "elec");
+			electronics.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Shared.eventBus.notify(new ThemeSelectedEvent(themeElectronics));
+				}
+			});
+			animateShow(electronics);
+		}else return;
+
+		if(GetThemeScore.getScore(15)==3) {
+			final Theme themeEntertainment = Themes.createEntertainTheme();
+			setStars((ImageView) entertainment.findViewById(R.id.theme_entertain), themeEntertainment, "entertain");
+			entertainment.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Shared.eventBus.notify(new ThemeSelectedEvent(themeEntertainment));
+				}
+			});
+			animateShow(entertainment);
+		}else return;
 
 
-		drinks.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Shared.eventBus.notify(new ThemeSelectedEvent(themeDrinks));
-			}
-		});
-		comm.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Shared.eventBus.notify(new ThemeSelectedEvent(themeComm));
-			}
-		});
-		commerce.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Shared.eventBus.notify(new ThemeSelectedEvent(themeCommerce));
-			}
-		});
-		computer.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Shared.eventBus.notify(new ThemeSelectedEvent(themeComputer));
-			}
-		});
-		construction.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Shared.eventBus.notify(new ThemeSelectedEvent(themeConstruction));
-			}
-		});
-		education.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Shared.eventBus.notify(new ThemeSelectedEvent(themeEducation));
-			}
-		});
-		electronics.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Shared.eventBus.notify(new ThemeSelectedEvent(themeElectronics));
-			}
-		});
-		entertainment.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Shared.eventBus.notify(new ThemeSelectedEvent(themeEntertainment));
-			}
-		});
 
 
-		animateShow(drinks);
-		animateShow(comm);
-		animateShow(commerce);
-		animateShow(computer);
-		animateShow(construction);
-		animateShow(education);
-		animateShow(electronics);
-		animateShow(entertainment);
+
+
+
+
 
 	}
 
@@ -295,84 +322,102 @@ public class themeFragment extends Fragment {
 		View monuments = view.findViewById(R.id.theme_monu_container);
 		View sports = view.findViewById(R.id.theme_sport_container);
 
+		if(GetThemeScore.getScore(16)==3){
+			final Theme themeFraming = Themes.createFarmTheme();
+			setStars((ImageView) farming.findViewById(R.id.theme_farm), themeFraming, "farm");
+			farming.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Shared.eventBus.notify(new ThemeSelectedEvent(themeFraming));
+				}
+			});
+			animateShow(farming);
+		}else return;
 
-		final Theme themeFraming = Themes.createFarmTheme();
-		setStars((ImageView) farming.findViewById(R.id.theme_farm), themeFraming, "farm");
-		final Theme themeFurniture = Themes.createFurnTheme();
-		setStars((ImageView) furniture.findViewById(R.id.theme_furn), themeFurniture, "frun");
-		final Theme themeGestures = Themes.createGestTheme();
-		setStars((ImageView) gestures.findViewById(R.id.theme_gest), themeGestures, "gest");
-		final Theme themeHobbies = Themes.createHobbTheme();
-		setStars((ImageView) hobbies.findViewById(R.id.theme_hobb), themeHobbies, "hobb");
-		final Theme themeKids = Themes.createKidsTheme();
-		setStars((ImageView) kids.findViewById(R.id.theme_kid), themeKids, "kids");
-		final Theme themeMedical = Themes.createMedTheme();
-		setStars((ImageView) medical.findViewById(R.id.theme_med), themeMedical, "med");
-		final Theme themeMonuments = Themes.createMonuTheme();
-		setStars((ImageView) monuments.findViewById(R.id.theme_monu), themeMonuments, "monu");
-		final Theme themeSports = Themes.createSportTheme();
-		setStars((ImageView) sports.findViewById(R.id.theme_sport), themeSports, "sport");
+		if(GetThemeScore.getScore(17)==3) {
+			final Theme themeFurniture = Themes.createFurnTheme();
+			setStars((ImageView) furniture.findViewById(R.id.theme_furn), themeFurniture, "frun");
+			furniture.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Shared.eventBus.notify(new ThemeSelectedEvent(themeFurniture));
+				}
+			});
+			animateShow(furniture);
+		}else return;
 
-
-		farming.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Shared.eventBus.notify(new ThemeSelectedEvent(themeFraming));
-			}
-		});
-		furniture.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Shared.eventBus.notify(new ThemeSelectedEvent(themeFurniture));
-			}
-		});
-		gestures.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Shared.eventBus.notify(new ThemeSelectedEvent(themeGestures));
-			}
-		});
-		hobbies.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Shared.eventBus.notify(new ThemeSelectedEvent(themeHobbies));
-			}
-		});
-		kids.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Shared.eventBus.notify(new ThemeSelectedEvent(themeKids));
-			}
-		});
-		medical.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Shared.eventBus.notify(new ThemeSelectedEvent(themeMedical));
-			}
-		});
-		monuments.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Shared.eventBus.notify(new ThemeSelectedEvent(themeMonuments));
-			}
-		});
-		sports.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Shared.eventBus.notify(new ThemeSelectedEvent(themeSports));
-			}
-		});
+		if(GetThemeScore.getScore(18)==3) {
+			final Theme themeGestures = Themes.createGestTheme();
+			setStars((ImageView) gestures.findViewById(R.id.theme_gest), themeGestures, "gest");
+			gestures.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Shared.eventBus.notify(new ThemeSelectedEvent(themeGestures));
+				}
+			});
+			animateShow(gestures);
+		}else return;
 
 
-		animateShow(farming);
-		animateShow(furniture);
-		animateShow(gestures);
-		animateShow(hobbies);
-		animateShow(kids);
-		animateShow(medical);
-		animateShow(monuments);
-		animateShow(sports);
+		if(GetThemeScore.getScore(19)==3) {
+			final Theme themeHobbies = Themes.createHobbTheme();
+			setStars((ImageView) hobbies.findViewById(R.id.theme_hobb), themeHobbies, "hobb");
+			hobbies.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Shared.eventBus.notify(new ThemeSelectedEvent(themeHobbies));
+				}
+			});
+			animateShow(hobbies);
+		}else return;
 
+		if(GetThemeScore.getScore(20)==3) {
+			final Theme themeKids = Themes.createKidsTheme();
+			setStars((ImageView) kids.findViewById(R.id.theme_kid), themeKids, "kids");
+			kids.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Shared.eventBus.notify(new ThemeSelectedEvent(themeKids));
+				}
+			});
+			animateShow(kids);
+		}else return;
+
+		if(GetThemeScore.getScore(21)==3) {
+			final Theme themeMedical = Themes.createMedTheme();
+			setStars((ImageView) medical.findViewById(R.id.theme_med), themeMedical, "med");
+			medical.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Shared.eventBus.notify(new ThemeSelectedEvent(themeMedical));
+				}
+			});
+			animateShow(medical);
+		}else return;
+
+		if(GetThemeScore.getScore(22)==3) {
+			final Theme themeMonuments = Themes.createMonuTheme();
+			setStars((ImageView) monuments.findViewById(R.id.theme_monu), themeMonuments, "monu");
+			monuments.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Shared.eventBus.notify(new ThemeSelectedEvent(themeMonuments));
+				}
+			});
+			animateShow(monuments);
+		}else return;
+
+		if(GetThemeScore.getScore(23)==3) {
+			final Theme themeSports = Themes.createSportTheme();
+			setStars((ImageView) sports.findViewById(R.id.theme_sport), themeSports, "sport");
+			sports.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Shared.eventBus.notify(new ThemeSelectedEvent(themeSports));
+				}
+			});
+			animateShow(sports);
+		}else return;
 	}
 
 	private void animateShow(View view) {
@@ -392,11 +437,11 @@ public class themeFragment extends Fragment {
 			sum += Memory.getHighStars(theme.id, difficulty);
 		}
 		int num = sum / 6;
-		if (num != 0) {
+
 			String drawableResourceName = String.format(Locale.US, type + "_theme_star_%d", num);
 			int drawableResourceId = Shared.context.getResources().getIdentifier(drawableResourceName, "drawable", Shared.context.getPackageName());
 			imageView.setImageResource(drawableResourceId);
-		}
+
 	}
 
 }
