@@ -218,7 +218,7 @@ public class Themes {
 		Theme theme = new Theme();
 		theme.id = 16;
 		theme.name = "Entertain";
-		theme.backgroundImageUrl = URI_DRAWABLE + "back_Entertain";
+		theme.backgroundImageUrl = URI_DRAWABLE + "back_entertain";
 		theme.tileImageUrls = new ArrayList<String>();
 		// 36 drawables
 		for (int i = 1; i <= 24; i++) {

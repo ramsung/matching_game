@@ -154,27 +154,5 @@ public class ThemeSelectFragment extends Fragment {
 		return view;
 	}
 
-	private void animateShow(View view) {
-		ObjectAnimator animatorScaleX = ObjectAnimator.ofFloat(view, "scaleX", 0.5f, 1f);
-		ObjectAnimator animatorScaleY = ObjectAnimator.ofFloat(view, "scaleY", 0.5f, 1f);
-		AnimatorSet animatorSet = new AnimatorSet();
-		animatorSet.setDuration(300);
-		animatorSet.playTogether(animatorScaleX, animatorScaleY);
-		animatorSet.setInterpolator(new DecelerateInterpolator(2));
-		view.setLayerType(View.LAYER_TYPE_HARDWARE, null);
-		animatorSet.start();
-	}
 
-	private void setStars(ImageView imageView, Theme theme, String type) {
-		int sum = 0;
-		for (int difficulty = 1; difficulty <= 6; difficulty++) {
-			sum += Memory.getHighStars(theme.id, difficulty);
-		}
-		int num = sum / 6;
-		if (num != 0) {
-			String drawableResourceName = String.format(Locale.US, type + "_theme_star_%d", num);
-			int drawableResourceId = Shared.context.getResources().getIdentifier(drawableResourceName, "drawable", Shared.context.getPackageName());
-			imageView.setImageResource(drawableResourceId);
-		}
-	}
 }
