@@ -23,10 +23,7 @@
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
             android:src="@drawable/level_complete_star" />
-        <Space
-            android:layout_width="50dp"
-            android:layout_height="wrap_content" />
-        <ImageView
+         <ImageView
             android:id="@+id/sound_image1"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/popup_settings_sound_image_size"
@@ -35,19 +32,19 @@
             android:scaleType="centerCrop"
             android:src="@drawable/level_complete_star" />
         </LinearLayout>
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="35dp" />
 
 <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:layout_gravity="center"
+    android:orientation="vertical">
     <TextView
         android:id="@+id/sound_off_text"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:fontFamily="sans-serif-condensed"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
         android:gravity="center"
         android:shadowColor="#2eaed9"
         android:shadowDx="4"
@@ -56,12 +53,10 @@
         android:text="Complete previous game At least with 2 starts"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="@dimen/popup_settings_sound_text_size"
+        android:textSize="23sp"
         android:textStyle="bold"
         android:typeface="monospace" />
-    <Space
-        android:layout_width="15dp"
-        android:layout_height="15dp" />
+
 
     <TextView
         android:id="@+id/sound_off_text1"
@@ -77,22 +72,30 @@
         android:text="(or)"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="@dimen/popup_settings_sound_text_size"
+        android:textSize="23sp"
         android:textStyle="bold"
         android:typeface="monospace" />
-    <Space
-        android:layout_width="15dp"
-        android:layout_height="wrap_content" />
 
 
 
-      <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="175dp"
-            android:layout_gravity="center"
-            android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
-            android:src="@drawable/unlock" />
+
+
+    <Button
+        android:id="@+id/adButton"
+
+        android:text="Watch Ad to unLock"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#E6E6E6"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="20"
+        />
 </LinearLayout>
 
     </LinearLayout>

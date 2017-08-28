@@ -4,6 +4,7 @@ package com.beyonity.matchinggame.fragments;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
+import android.renderscript.Script;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -36,12 +37,12 @@ import com.google.android.gms.ads.NativeExpressAdView;
 import com.google.android.gms.ads.reward.RewardItem;
 import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
+import com.unity3d.ads.IUnityAdsListener;
+import com.unity3d.ads.UnityAds;
 
-
-public class themeFragment extends Fragment implements RewardedVideoAdListener{
+public class themeFragment extends Fragment{
 	private static final String ARG_C = "content";
 	private static final String TAG = "themeFragment";
-	private RewardedVideoAd mAd;
 	Theme themeAnimals;
 	Theme themeMonsters;
 	Theme themeEmoji;
@@ -50,6 +51,26 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 	Theme themeFood;
 	Theme themeVeg;
 	Theme themeFruits;
+	Theme themeDrinks;
+	Theme themeComm;
+	Theme themeCommerce;
+	Theme themeComputer;
+	Theme themeConstruction;
+	Theme themeEducation;
+	Theme themeElectronics;
+	Theme themeEntertainment;
+	Theme themeFarming;
+	Theme themeFurniture;
+	Theme themeGesture;
+	Theme themeHobbies;
+	Theme themeKids;
+	Theme themeMedical;
+	Theme themeMonuments;
+	Theme themeSports;
+
+
+
+
 	View first,second,third;
 	int id;
 
@@ -69,9 +90,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 		second = inflater.inflate(R.layout.second8, container, false);
 		third = inflater.inflate(R.layout.third8, container, false);
 		//View fourth = inflater.inflate(R.layout.fourth8, container, false);
-		mAd = MobileAds.getRewardedVideoAdInstance(getActivity());
-		mAd.setRewardedVideoAdListener(this);
-		loadAd();
+
 		if (Integer.parseInt(content) == 0) {
 			setFirstPage(first);
 
@@ -127,12 +146,11 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 			monsters.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					//PopupManager.showPopupUnlock();
-					if (mAd.isLoaded()) {
-						//id = themeMonsters.id;
-						Log.i(TAG, "onClick: listener");
-						mAd.show();
-					}
+					Memory.saveCurrentID(themeMonsters.id);
+					PopupManager.showPopupUnlock();
+					/*if(UnityAds.isReady()){
+						UnityAds.show(getActivity());
+					}*/
 				}
 			});
 
@@ -150,7 +168,23 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 				}
 			});
 			animateShow(emoji);
-		} else return;
+		} else {
+			themeEmoji = Themes.createEmojiTheme();
+			Log.i(TAG, "setFirstPage: inside else");
+			emoji.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Memory.saveCurrentID(themeEmoji.id);
+					PopupManager.showPopupUnlock();
+					/*if(UnityAds.isReady()){
+						UnityAds.show(getActivity());
+					}*/
+				}
+			});
+
+
+		}
+
 		if (GetThemeScore.getScore(themeEmoji.id) == 2|| Memory.getUnlock(4)) {
 			themeTrans = Themes.createTransTheme();
 			setStars((ImageView) trans.findViewById(R.id.theme_trans), themeEmoji, "trans");
@@ -161,7 +195,23 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 				}
 			});
 			animateShow(trans);
-		} else return;
+		} else {
+			themeTrans= Themes.createTransTheme();
+			Log.i(TAG, "setFirstPage: inside else");
+			trans.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Memory.saveCurrentID(themeTrans.id);
+					PopupManager.showPopupUnlock();
+					/*if(UnityAds.isReady()){
+						UnityAds.show(getActivity());
+					}*/
+				}
+			});
+
+
+		}
+
 
 		if (GetThemeScore.getScore(themeTrans.id) == 3 || Memory.getUnlock(5)) {
 			themeFlag = Themes.createFlagTheme();
@@ -173,7 +223,23 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 				}
 			});
 			animateShow(flag);
-		} else return;
+		}else {
+			themeFlag = Themes.createFlagTheme();
+			Log.i(TAG, "setFirstPage: inside else");
+			flag.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Memory.saveCurrentID(themeFlag.id);
+					PopupManager.showPopupUnlock();
+					/*if(UnityAds.isReady()){
+						UnityAds.show(getActivity());
+					}*/
+				}
+			});
+
+
+		}
+
 
 
 		if (GetThemeScore.getScore(themeFlag.id) == 2|| Memory.getUnlock(6)) {
@@ -186,7 +252,23 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 				}
 			});
 			animateShow(food);
-		} else return;
+		} else {
+			themeFood = Themes.createFoodTheme();
+			Log.i(TAG, "setFirstPage: inside else");
+			food.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Memory.saveCurrentID(themeFood.id);
+					PopupManager.showPopupUnlock();
+					/*if(UnityAds.isReady()){
+						UnityAds.show(getActivity());
+					}*/
+				}
+			});
+
+
+		}
+
 
 		if (GetThemeScore.getScore(themeFood.id) == 2|| Memory.getUnlock(7)) {
 			themeVeg = Themes.createVegTheme();
@@ -198,7 +280,23 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 				}
 			});
 			animateShow(veg);
-		} else return;
+		} else {
+			themeVeg= Themes.createVegTheme();
+			Log.i(TAG, "setFirstPage: inside else");
+			veg.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Memory.saveCurrentID(themeVeg.id);
+					PopupManager.showPopupUnlock();
+					/*if(UnityAds.isReady()){
+						UnityAds.show(getActivity());
+					}*/
+				}
+			});
+
+
+		}
+
 
 		if (GetThemeScore.getScore(themeVeg.id) == 2|| Memory.getUnlock(8)) {
 			themeFruits = Themes.createFruitsTheme();
@@ -210,7 +308,23 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 				}
 			});
 			animateShow(fruits);
-		}else return;
+		}else {
+			themeFruits= Themes.createFruitsTheme();
+			Log.i(TAG, "setFirstPage: inside else");
+			fruits.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Memory.saveCurrentID(themeFruits.id);
+					PopupManager.showPopupUnlock();
+					/*if(UnityAds.isReady()){
+						UnityAds.show(getActivity());
+					}*/
+				}
+			});
+
+
+		}
+
 
 		Log.i(TAG, "setFirstPage: " + Memory.getHighStars(themeAnimals.id, 1));
 		Log.i(TAG, "setFirstPage: " + Memory.getHighStars(themeAnimals.id, 2));
@@ -233,7 +347,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 		View entertainment = view.findViewById(R.id.theme_entertain_container);
 
 		if(GetThemeScore.getScore(8)>=2|| Memory.getUnlock(9)){
-			final Theme themeDrinks = Themes.createDrinksTheme();
+			themeDrinks = Themes.createDrinksTheme();
 			setStars((ImageView) drinks.findViewById(R.id.theme_drinks), themeDrinks, "drinks");
 			drinks.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -242,10 +356,26 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 				}
 			});
 			animateShow(drinks);
-		}else return;
+		}else {
+			themeDrinks= Themes.createDrinksTheme();
+			Log.i(TAG, "setFirstPage: inside else");
+			drinks.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Memory.saveCurrentID(themeDrinks.id);
+					PopupManager.showPopupUnlock();
+					/*if(UnityAds.isReady()){
+						UnityAds.show(getActivity());
+					}*/
+				}
+			});
+
+
+		}
+
 
 		if(GetThemeScore.getScore(9)>=2|| Memory.getUnlock(10)) {
-			final Theme themeComm = Themes.createCommTheme();
+			themeComm = Themes.createCommTheme();
 			setStars((ImageView) comm.findViewById(R.id.theme_comm), themeComm, "comm");
 			comm.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -254,10 +384,26 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 				}
 			});
 			animateShow(comm);
-		}else return;
+		}else {
+			themeComm = Themes.createCommTheme();
+			Log.i(TAG, "setFirstPage: inside else");
+			comm.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Memory.saveCurrentID(themeComm.id);
+					PopupManager.showPopupUnlock();
+					/*if(UnityAds.isReady()){
+						UnityAds.show(getActivity());
+					}*/
+				}
+			});
+
+
+		}
+
 
 		if(GetThemeScore.getScore(10)>=2|| Memory.getUnlock(11)) {
-			final Theme themeCommerce = Themes.createCommerceTheme();
+			themeCommerce = Themes.createCommerceTheme();
 			setStars((ImageView) commerce.findViewById(R.id.theme_commerce), themeCommerce, "commerce");
 			commerce.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -266,10 +412,26 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 				}
 			});
 			animateShow(commerce);
-		}else return;
+		}else {
+			themeCommerce= Themes.createCommerceTheme();
+			Log.i(TAG, "setFirstPage: inside else");
+			commerce.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Memory.saveCurrentID(themeCommerce.id);
+					PopupManager.showPopupUnlock();
+					/*if(UnityAds.isReady()){
+						UnityAds.show(getActivity());
+					}*/
+				}
+			});
+
+
+		}
+
 
 		if(GetThemeScore.getScore(11)>=2|| Memory.getUnlock(12)) {
-			final Theme themeComputer = Themes.createCompTheme();
+			themeComputer = Themes.createCompTheme();
 			setStars((ImageView) computer.findViewById(R.id.theme_comp), themeComputer, "comp");
 			computer.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -278,10 +440,26 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 				}
 			});
 			animateShow(computer);
-		}else return;
+		}else {
+			themeComputer= Themes.createCompTheme();
+			Log.i(TAG, "setFirstPage: inside else");
+			computer.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Memory.saveCurrentID(themeComputer.id);
+					PopupManager.showPopupUnlock();
+					/*if(UnityAds.isReady()){
+						UnityAds.show(getActivity());
+					}*/
+				}
+			});
+
+
+		}
+
 
 		if(GetThemeScore.getScore(12)>=2|| Memory.getUnlock(13)) {
-			final Theme themeConstruction = Themes.createConstructTheme();
+			themeConstruction = Themes.createConstructTheme();
 			setStars((ImageView) construction.findViewById(R.id.theme_construct), themeConstruction, "construct");
 			construction.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -290,10 +468,26 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 				}
 			});
 			animateShow(construction);
-		}else return;
+		}else {
+			themeConstruction = Themes.createConstructTheme();
+			Log.i(TAG, "setFirstPage: inside else");
+			construction.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Memory.saveCurrentID(themeConstruction.id);
+					PopupManager.showPopupUnlock();
+					/*if(UnityAds.isReady()){
+						UnityAds.show(getActivity());
+					}*/
+				}
+			});
+
+
+		}
+
 
 		if(GetThemeScore.getScore(13)>=2|| Memory.getUnlock(14)) {
-			final Theme themeEducation = Themes.createEduTheme();
+			themeEducation = Themes.createEduTheme();
 			setStars((ImageView) education.findViewById(R.id.theme_edu), themeEducation, "edu");
 
 			education.setOnClickListener(new View.OnClickListener() {
@@ -303,10 +497,26 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 				}
 			});
 			animateShow(education);
-		}else return;
+		}else {
+			themeEducation = Themes.createEduTheme();
+			Log.i(TAG, "setFirstPage: inside else");
+			education.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Memory.saveCurrentID(themeEducation.id);
+					PopupManager.showPopupUnlock();
+					/*if(UnityAds.isReady()){
+						UnityAds.show(getActivity());
+					}*/
+				}
+			});
+
+
+		}
+
 
 		if(GetThemeScore.getScore(14)>=2|| Memory.getUnlock(15)) {
-			final Theme themeElectronics = Themes.createElcTheme();
+			themeElectronics = Themes.createElcTheme();
 			setStars((ImageView) electronics.findViewById(R.id.theme_elec), themeElectronics, "elec");
 			electronics.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -315,10 +525,26 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 				}
 			});
 			animateShow(electronics);
-		}else return;
+		}else {
+			themeElectronics = Themes.createElcTheme();
+			Log.i(TAG, "setFirstPage: inside else");
+			electronics.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Memory.saveCurrentID(themeElectronics.id);
+					PopupManager.showPopupUnlock();
+					/*if(UnityAds.isReady()){
+						UnityAds.show(getActivity());
+					}*/
+				}
+			});
+
+
+		}
+
 
 		if(GetThemeScore.getScore(15)>=2|| Memory.getUnlock(16)) {
-			final Theme themeEntertainment = Themes.createEntertainTheme();
+			themeEntertainment = Themes.createEntertainTheme();
 			setStars((ImageView) entertainment.findViewById(R.id.theme_entertain), themeEntertainment, "entertain");
 			entertainment.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -327,7 +553,23 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 				}
 			});
 			animateShow(entertainment);
-		}else return;
+		}else {
+			themeEntertainment = Themes.createEntertainTheme();
+			Log.i(TAG, "setFirstPage: inside else");
+			entertainment.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Memory.saveCurrentID(themeEntertainment.id);
+					PopupManager.showPopupUnlock();
+					/*if(UnityAds.isReady()){
+						UnityAds.show(getActivity());
+					}*/
+				}
+			});
+
+
+		}
+
 
 
 
@@ -350,19 +592,35 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 		View sports = view.findViewById(R.id.theme_sport_container);
 
 		if(GetThemeScore.getScore(16)>=2|| Memory.getUnlock(17)){
-			final Theme themeFraming = Themes.createFarmTheme();
-			setStars((ImageView) farming.findViewById(R.id.theme_farm), themeFraming, "farm");
+			themeFarming = Themes.createFarmTheme();
+			setStars((ImageView) farming.findViewById(R.id.theme_farm), themeFarming, "farm");
 			farming.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					Shared.eventBus.notify(new ThemeSelectedEvent(themeFraming));
+					Shared.eventBus.notify(new ThemeSelectedEvent(themeFarming));
 				}
 			});
 			animateShow(farming);
-		}else return;
+		}else {
+			themeFarming = Themes.createFarmTheme();
+			Log.i(TAG, "setFirstPage: inside else");
+			farming.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Memory.saveCurrentID(themeFarming.id);
+					PopupManager.showPopupUnlock();
+					/*if(UnityAds.isReady()){
+						UnityAds.show(getActivity());
+					}*/
+				}
+			});
+
+
+		}
+
 
 		if(GetThemeScore.getScore(17)>=2|| Memory.getUnlock(18)) {
-			final Theme themeFurniture = Themes.createFurnTheme();
+			themeFurniture = Themes.createFurnTheme();
 			setStars((ImageView) furniture.findViewById(R.id.theme_furn), themeFurniture, "frun");
 			furniture.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -371,23 +629,55 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 				}
 			});
 			animateShow(furniture);
-		}else return;
+		}else {
+			themeFurniture= Themes.createFurnTheme();
+			Log.i(TAG, "setFirstPage: inside else");
+			furniture.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Memory.saveCurrentID(themeFurniture.id);
+					PopupManager.showPopupUnlock();
+					/*if(UnityAds.isReady()){
+						UnityAds.show(getActivity());
+					}*/
+				}
+			});
+
+
+		}
+
 
 		if(GetThemeScore.getScore(18)>=2|| Memory.getUnlock(19)) {
-			final Theme themeGestures = Themes.createGestTheme();
-			setStars((ImageView) gestures.findViewById(R.id.theme_gest), themeGestures, "gest");
+			themeGesture= Themes.createGestTheme();
+			setStars((ImageView) gestures.findViewById(R.id.theme_gest), themeGesture, "gest");
 			gestures.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					Shared.eventBus.notify(new ThemeSelectedEvent(themeGestures));
+					Shared.eventBus.notify(new ThemeSelectedEvent(themeGesture));
 				}
 			});
 			animateShow(gestures);
-		}else return;
+		}else {
+			themeGesture= Themes.createGestTheme();
+			Log.i(TAG, "setFirstPage: inside else");
+			gestures.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Memory.saveCurrentID(themeGesture.id);
+					PopupManager.showPopupUnlock();
+					/*if(UnityAds.isReady()){
+						UnityAds.show(getActivity());
+					}*/
+				}
+			});
+
+
+		}
+
 
 
 		if(GetThemeScore.getScore(19)>=2|| Memory.getUnlock(20)) {
-			final Theme themeHobbies = Themes.createHobbTheme();
+			themeHobbies = Themes.createHobbTheme();
 			setStars((ImageView) hobbies.findViewById(R.id.theme_hobb), themeHobbies, "hobb");
 			hobbies.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -396,10 +686,26 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 				}
 			});
 			animateShow(hobbies);
-		}else return;
+		}else {
+			themeHobbies= Themes.createHobbTheme();
+			Log.i(TAG, "setFirstPage: inside else");
+			hobbies.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Memory.saveCurrentID(themeHobbies.id);
+					PopupManager.showPopupUnlock();
+					/*if(UnityAds.isReady()){
+						UnityAds.show(getActivity());
+					}*/
+				}
+			});
+
+
+		}
+
 
 		if(GetThemeScore.getScore(20)>=2|| Memory.getUnlock(21)) {
-			final Theme themeKids = Themes.createKidsTheme();
+			themeKids = Themes.createKidsTheme();
 			setStars((ImageView) kids.findViewById(R.id.theme_kid), themeKids, "kids");
 			kids.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -408,10 +714,26 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 				}
 			});
 			animateShow(kids);
-		}else return;
+		}else {
+			themeKids = Themes.createKidsTheme();
+			Log.i(TAG, "setFirstPage: inside else");
+			kids.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Memory.saveCurrentID(themeKids.id);
+					PopupManager.showPopupUnlock();
+					/*if(UnityAds.isReady()){
+						UnityAds.show(getActivity());
+					}*/
+				}
+			});
+
+
+		}
+
 
 		if(GetThemeScore.getScore(21)>=2|| Memory.getUnlock(22)) {
-			final Theme themeMedical = Themes.createMedTheme();
+			themeMedical = Themes.createMedTheme();
 			setStars((ImageView) medical.findViewById(R.id.theme_med), themeMedical, "med");
 			medical.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -420,10 +742,26 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 				}
 			});
 			animateShow(medical);
-		}else return;
+		}else {
+			themeMedical= Themes.createMedTheme();
+			Log.i(TAG, "setFirstPage: inside else");
+			medical.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Memory.saveCurrentID(themeMedical.id);
+					PopupManager.showPopupUnlock();
+					/*if(UnityAds.isReady()){
+						UnityAds.show(getActivity());
+					}*/
+				}
+			});
+
+
+		}
+
 
 		if(GetThemeScore.getScore(22)>=2|| Memory.getUnlock(23)) {
-			final Theme themeMonuments = Themes.createMonuTheme();
+			themeMonuments = Themes.createMonuTheme();
 			setStars((ImageView) monuments.findViewById(R.id.theme_monu), themeMonuments, "monu");
 			monuments.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -432,10 +770,26 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 				}
 			});
 			animateShow(monuments);
-		}else return;
+		}else {
+			themeMonuments= Themes.createMonuTheme();
+			Log.i(TAG, "setFirstPage: inside else");
+			monuments.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Memory.saveCurrentID(themeMonuments.id);
+					PopupManager.showPopupUnlock();
+					/*if(UnityAds.isReady()){
+						UnityAds.show(getActivity());
+					}*/
+				}
+			});
+
+
+		}
+
 
 		if(GetThemeScore.getScore(23)>=2|| Memory.getUnlock(4)) {
-			final Theme themeSports = Themes.createSportTheme();
+			themeSports = Themes.createSportTheme();
 			setStars((ImageView) sports.findViewById(R.id.theme_sport), themeSports, "sport");
 			sports.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -444,7 +798,23 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 				}
 			});
 			animateShow(sports);
-		}else return;
+		}else {
+			themeSports = Themes.createSportTheme();
+			Log.i(TAG, "setFirstPage: inside else");
+			sports.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Memory.saveCurrentID(themeSports.id);
+					PopupManager.showPopupUnlock();
+					/*if(UnityAds.isReady()){
+						UnityAds.show(getActivity());
+					}*/
+				}
+			});
+
+
+		}
+
 	}
 
 	private void animateShow(View view) {
@@ -471,70 +841,13 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 
 	}
 
-	@Override
-	public void onRewardedVideoAdLoaded() {
-
-	}
-
-	@Override
-	public void onRewardedVideoAdOpened() {
-
-	}
-
-	@Override
-	public void onRewardedVideoStarted() {
-
-	}
-
-	@Override
-	public void onRewardedVideoAdClosed() {
-		mAd.loadAd("ca-app-pub-3940256099942544/5224354917", new AdRequest.Builder().build());
-	}
-
-	@Override
-	public void onRewarded(RewardItem rewardItem) {
-		unlockTheme();
-
-	}
-
-	@Override
-	public void onRewardedVideoAdLeftApplication() {
-
-	}
-
-	@Override
-	public void onRewardedVideoAdFailedToLoad(int i) {
-
-	}
-	public void loadAd(){
-
-
-		mAd.loadAd("ca-app-pub-7987343674758455/4848523032", request);
-	}
 
 	@Override
 	public void onResume() {
-		mAd.resume(getActivity());
 		super.onResume();
-		loadAd();
-	}
-
-	@Override
-	public void onPause() {
-		mAd.pause(getActivity());
-		super.onPause();
-	}
-
-	@Override
-	public void onDestroy() {
-		mAd.destroy(getActivity());
-		super.onDestroy();
-	}
-
-	private void unlockTheme(){
-		Memory.saveUnlock(id);
-		setFirstPage(first);
-
-		//animateShow(monsters);
+		String content = getArguments().getString(ARG_C);
+		if(Integer.parseInt(content)==0){
+			setFirstPage(first);
+		}
 	}
 }

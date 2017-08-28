@@ -38,4 +38,17 @@ public class Memory {
 		return sharedPreferences.getBoolean(String.valueOf(id), false);
 	}
 
+	public static void saveCurrentID(int id){
+		SharedPreferences sharedPreferences = Shared.context.getSharedPreferences(SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
+		Editor edit = sharedPreferences.edit();
+
+		edit.putInt("currentID", id).commit();
+	}
+
+	public static int getCurrentID() {
+		SharedPreferences sharedPreferences = Shared.context.getSharedPreferences(SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
+		return sharedPreferences.getInt("currentID", 0);
+	}
+
+
 }
