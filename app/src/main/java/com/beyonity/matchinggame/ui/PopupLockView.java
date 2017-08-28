@@ -27,7 +27,7 @@ public class PopupLockView extends LinearLayout {
 	public PopupLockView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		setOrientation(LinearLayout.VERTICAL);
-		setBackgroundResource(R.drawable.settings_popup);
+		setBackgroundResource(R.drawable.lvl_unlock_popup);
 		LayoutInflater.from(getContext()).inflate(R.layout.popup_unlock_view, this, true);
 
 		TextView rateView = (TextView) findViewById(R.id.rate_text);
