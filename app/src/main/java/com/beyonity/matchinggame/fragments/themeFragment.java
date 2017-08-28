@@ -509,7 +509,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 	public void loadAd(){
 
 
-		mAd.loadAd("ca-app-pub-7987343674758455/4848523032", request);
+
 	}
 
 	@Override
