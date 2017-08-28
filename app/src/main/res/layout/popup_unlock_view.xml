@@ -13,8 +13,7 @@
         android:layout_height="wrap_content"
 
         android:layout_gravity="center"
-        android:orientation="horizontal"
-        android:layout_marginLeft="5dp">
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/sound_image"
@@ -39,11 +38,12 @@
     <Space
         android:layout_width="match_parent"
         android:layout_height="50dp" />
+
     <TextView
         android:id="@+id/sound_off_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="10dp"
+        android:fontFamily="sans-serif-condensed"
         android:gravity="center"
         android:shadowColor="#2eaed9"
         android:shadowDx="4"
@@ -53,15 +53,18 @@
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="@dimen/popup_settings_sound_text_size"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:typeface="monospace" />
     <Space
         android:layout_width="match_parent"
         android:layout_height="15dp" />
+
     <TextView
         android:id="@+id/sound_off_text1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="10dp"
+
+        android:fontFamily="sans-serif-condensed"
         android:gravity="center"
         android:shadowColor="#2eaed9"
         android:shadowDx="4"
@@ -71,7 +74,8 @@
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="@dimen/popup_settings_sound_text_size"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:typeface="monospace" />
     <Space
         android:layout_width="match_parent"
         android:layout_height="15dp" />
