@@ -126,10 +126,10 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 			monsters.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					//PopupManager.showPopupUnlock();
-					if (mAd.isLoaded()) {
+					PopupManager.showPopupUnlock();
+					/*if (mAd.isLoaded()) {
 						mAd.show();
-					}
+					}*/
 				}
 			});
 
