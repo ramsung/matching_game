@@ -36,6 +36,8 @@ import com.google.android.gms.ads.NativeExpressAdView;
 import com.google.android.gms.ads.reward.RewardItem;
 import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
+import com.jirbo.adcolony.AdColonyAdapter;
+import com.jirbo.adcolony.AdColonyBundleBuilder;
 
 public class themeFragment extends Fragment implements RewardedVideoAdListener{
 	private static final String ARG_C = "content";
@@ -70,7 +72,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 		//View fourth = inflater.inflate(R.layout.fourth8, container, false);
 		mAd = MobileAds.getRewardedVideoAdInstance(getActivity());
 		mAd.setRewardedVideoAdListener(this);
-		mAd.loadAd("ca-app-pub-3940256099942544/5224354917", new AdRequest.Builder().build());
+		loadAd();
 		if (Integer.parseInt(content) == 0) {
 			setFirstPage(first);
 
@@ -128,7 +130,8 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 				public void onClick(View v) {
 					//PopupManager.showPopupUnlock();
 					if (mAd.isLoaded()) {
-						id = themeMonsters.id;
+						//id = themeMonsters.id;
+						Log.i(TAG, "onClick: listener");
 						mAd.show();
 					}
 				}
@@ -504,12 +507,19 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 	public void onRewardedVideoAdFailedToLoad(int i) {
 
 	}
+	public void loadAd(){
+		AdRequest request = new AdRequest.Builder()
+				.addNetworkExtrasBundle(AdColonyAdapter.class, AdColonyBundleBuilder.build())
+				.build();
 
+		mAd.loadAd("ca-app-pub-7987343674758455/4848523032", request);
+	}
 
 	@Override
 	public void onResume() {
 		mAd.resume(getActivity());
 		super.onResume();
+		loadAd();
 	}
 
 	@Override

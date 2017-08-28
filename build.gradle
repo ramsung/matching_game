@@ -17,7 +17,12 @@ allprojects {
         jcenter()
         maven {
             url "https://maven.google.com"
+
         }
+        maven {
+            url  "https://adcolony.bintray.com/AdColony"
+        }
+
     }
 }
 

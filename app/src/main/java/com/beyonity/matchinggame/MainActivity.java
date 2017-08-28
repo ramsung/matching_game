@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.widget.ImageView;
 
+import com.adcolony.sdk.AdColony;
 import com.beyonity.matchinggame.common.Shared;
 import com.beyonity.matchinggame.engine.Engine;
 import com.beyonity.matchinggame.engine.ScreenController;
@@ -23,6 +24,9 @@ public class MainActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		MobileAds.initialize(this, "ca-app-pub-7987343674758455~6668446139");
+		AdColony.configure(this,           // activity context
+				"app52d8f26a5b544f1180",
+				"vz0c7e4bf95a57483f8a", "vzc39be2c1d33a4d5ea8");
 		Shared.context = getApplicationContext();
 		Shared.engine = Engine.getInstance();
 		Shared.eventBus = EventBus.getInstance();
