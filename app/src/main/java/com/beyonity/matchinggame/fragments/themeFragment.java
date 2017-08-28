@@ -36,8 +36,7 @@ import com.google.android.gms.ads.NativeExpressAdView;
 import com.google.android.gms.ads.reward.RewardItem;
 import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
-import com.jirbo.adcolony.AdColonyAdapter;
-import com.jirbo.adcolony.AdColonyBundleBuilder;
+
 
 public class themeFragment extends Fragment implements RewardedVideoAdListener{
 	private static final String ARG_C = "content";
@@ -508,9 +507,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 
 	}
 	public void loadAd(){
-		AdRequest request = new AdRequest.Builder()
-				.addNetworkExtrasBundle(AdColonyAdapter.class, AdColonyBundleBuilder.build())
-				.build();
+
 
 		mAd.loadAd("ca-app-pub-7987343674758455/4848523032", request);
 	}
