@@ -48,13 +48,13 @@
         android:layout_marginTop="5dp" 
         android:layout_marginLeft="0dp">
 
-        <ImageView
+       <!-- <ImageView
             android:layout_width="wrap_content"
             android:layout_height="@dimen/popup_settings_sound_image_size"
             android:layout_marginLeft="5dp"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/unlock" />
+            android:src="@drawable/unlock" />-->
 
         <TextView
             android:id="@+id/rate_text"

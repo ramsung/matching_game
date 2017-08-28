@@ -4,8 +4,8 @@
     
     <!-- title -->
     <dimen name="title_width">800dp</dimen>
-    <dimen name="title_height">240dp</dimen>
-    <dimen name="title_margin_top">150dp</dimen>
+    <dimen name="title_height">300dp</dimen>
+    <dimen name="title_margin_top">130dp</dimen>
     
     <!-- menu buttons -->
     <dimen name="start_game_button">200dp</dimen>
