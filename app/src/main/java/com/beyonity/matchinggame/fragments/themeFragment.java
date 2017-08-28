@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
@@ -48,9 +49,9 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 	Theme themeFood;
 	Theme themeVeg;
 	Theme themeFruits;
-	Theme lockedTheme;
-	View lockedView;
-	View monsters;
+	View first,second,third;
+	int id;
+
 	public static themeFragment newInstance(String content) {
 		Bundle args = new Bundle();
 		args.putString(ARG_C, content);
@@ -63,9 +64,9 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 	@Override
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		String content = getArguments().getString(ARG_C);
-		View first = inflater.inflate(R.layout.first8, container, false);
-		View second = inflater.inflate(R.layout.second8, container, false);
-		View third = inflater.inflate(R.layout.third8, container, false);
+		first = inflater.inflate(R.layout.first8, container, false);
+		second = inflater.inflate(R.layout.second8, container, false);
+		third = inflater.inflate(R.layout.third8, container, false);
 		//View fourth = inflater.inflate(R.layout.fourth8, container, false);
 		mAd = MobileAds.getRewardedVideoAdInstance(getActivity());
 		mAd.setRewardedVideoAdListener(this);
@@ -91,7 +92,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 	private void setFirstPage(View view) {
 		//themes
 		View animals = view.findViewById(R.id.theme_animals_container);
-		monsters = view.findViewById(R.id.theme_monsters_container);
+		View monsters = view.findViewById(R.id.theme_monsters_container);
 		View emoji = view.findViewById(R.id.theme_emoji_container);
 		View trans = view.findViewById(R.id.theme_trans_container);
 		View flag = view.findViewById(R.id.theme_flag_container);
@@ -109,7 +110,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 		});
 		animateShow(animals);
 
-		if (GetThemeScore.getScore(themeAnimals.id) == 2) {
+		if (GetThemeScore.getScore(themeAnimals.id) >= 2 || Memory.getUnlock(2)) {
 			themeMonsters = Themes.createMosterTheme();
 			setStars((ImageView) monsters.findViewById(R.id.theme_monsters), themeMonsters, "monsters");
 			monsters.setOnClickListener(new View.OnClickListener() {
@@ -121,22 +122,23 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 			animateShow(monsters);
 		} else {
 			themeMonsters = Themes.createMosterTheme();
-			lockedTheme = themeMonsters;
-			lockedView = monsters;
+			Log.i(TAG, "setFirstPage: inside else");
 			monsters.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					PopupManager.showPopupUnlock();
-					/*if (mAd.isLoaded()) {
+					//PopupManager.showPopupUnlock();
+					if (mAd.isLoaded()) {
+						id = themeMonsters.id;
 						mAd.show();
-					}*/
+					}
 				}
 			});
 
-			return;
+
 		}
 
-		if (GetThemeScore.getScore(themeMonsters.id) == 2) {
+
+		if (GetThemeScore.getScore(themeMonsters.id) >= 2 || Memory.getUnlock(3)) {
 			themeEmoji = Themes.createEmojiTheme();
 			setStars((ImageView) emoji.findViewById(R.id.theme_emoji), themeEmoji, "emoji");
 			emoji.setOnClickListener(new View.OnClickListener() {
@@ -147,8 +149,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 			});
 			animateShow(emoji);
 		} else return;
-
-		if (GetThemeScore.getScore(themeEmoji.id) == 2) {
+		if (GetThemeScore.getScore(themeEmoji.id) == 2|| Memory.getUnlock(4)) {
 			themeTrans = Themes.createTransTheme();
 			setStars((ImageView) trans.findViewById(R.id.theme_trans), themeEmoji, "trans");
 			trans.setOnClickListener(new View.OnClickListener() {
@@ -160,7 +161,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 			animateShow(trans);
 		} else return;
 
-		if (GetThemeScore.getScore(themeTrans.id) == 3) {
+		if (GetThemeScore.getScore(themeTrans.id) == 3 || Memory.getUnlock(5)) {
 			themeFlag = Themes.createFlagTheme();
 			setStars((ImageView) flag.findViewById(R.id.theme_flag), themeFlag, "flag");
 			flag.setOnClickListener(new View.OnClickListener() {
@@ -173,7 +174,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 		} else return;
 
 
-		if (GetThemeScore.getScore(themeFlag.id) == 2) {
+		if (GetThemeScore.getScore(themeFlag.id) == 2|| Memory.getUnlock(6)) {
 			themeFood = Themes.createFoodTheme();
 			setStars((ImageView) food.findViewById(R.id.theme_food), themeFood, "food");
 			food.setOnClickListener(new View.OnClickListener() {
@@ -185,7 +186,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 			animateShow(food);
 		} else return;
 
-		if (GetThemeScore.getScore(themeFood.id) == 2) {
+		if (GetThemeScore.getScore(themeFood.id) == 2|| Memory.getUnlock(7)) {
 			themeVeg = Themes.createVegTheme();
 			setStars((ImageView) veg.findViewById(R.id.theme_veg), themeFood, "veg");
 			veg.setOnClickListener(new View.OnClickListener() {
@@ -197,7 +198,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 			animateShow(veg);
 		} else return;
 
-		if (GetThemeScore.getScore(themeVeg.id) == 2) {
+		if (GetThemeScore.getScore(themeVeg.id) == 2|| Memory.getUnlock(8)) {
 			themeFruits = Themes.createFruitsTheme();
 			setStars((ImageView) fruits.findViewById(R.id.theme_fruits), themeFood, "fruits");
 			fruits.setOnClickListener(new View.OnClickListener() {
@@ -229,7 +230,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 		View electronics = view.findViewById(R.id.theme_elec_container);
 		View entertainment = view.findViewById(R.id.theme_entertain_container);
 
-		if(GetThemeScore.getScore(8)>=2){
+		if(GetThemeScore.getScore(8)>=2|| Memory.getUnlock(9)){
 			final Theme themeDrinks = Themes.createDrinksTheme();
 			setStars((ImageView) drinks.findViewById(R.id.theme_drinks), themeDrinks, "drinks");
 			drinks.setOnClickListener(new View.OnClickListener() {
@@ -241,7 +242,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 			animateShow(drinks);
 		}else return;
 
-		if(GetThemeScore.getScore(9)>=2) {
+		if(GetThemeScore.getScore(9)>=2|| Memory.getUnlock(10)) {
 			final Theme themeComm = Themes.createCommTheme();
 			setStars((ImageView) comm.findViewById(R.id.theme_comm), themeComm, "comm");
 			comm.setOnClickListener(new View.OnClickListener() {
@@ -253,7 +254,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 			animateShow(comm);
 		}else return;
 
-		if(GetThemeScore.getScore(10)>=2) {
+		if(GetThemeScore.getScore(10)>=2|| Memory.getUnlock(11)) {
 			final Theme themeCommerce = Themes.createCommerceTheme();
 			setStars((ImageView) commerce.findViewById(R.id.theme_commerce), themeCommerce, "commerce");
 			commerce.setOnClickListener(new View.OnClickListener() {
@@ -265,7 +266,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 			animateShow(commerce);
 		}else return;
 
-		if(GetThemeScore.getScore(11)>=2) {
+		if(GetThemeScore.getScore(11)>=2|| Memory.getUnlock(12)) {
 			final Theme themeComputer = Themes.createCompTheme();
 			setStars((ImageView) computer.findViewById(R.id.theme_comp), themeComputer, "comp");
 			computer.setOnClickListener(new View.OnClickListener() {
@@ -277,7 +278,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 			animateShow(computer);
 		}else return;
 
-		if(GetThemeScore.getScore(12)>=2) {
+		if(GetThemeScore.getScore(12)>=2|| Memory.getUnlock(13)) {
 			final Theme themeConstruction = Themes.createConstructTheme();
 			setStars((ImageView) construction.findViewById(R.id.theme_construct), themeConstruction, "construct");
 			construction.setOnClickListener(new View.OnClickListener() {
@@ -289,7 +290,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 			animateShow(construction);
 		}else return;
 
-		if(GetThemeScore.getScore(13)>=2) {
+		if(GetThemeScore.getScore(13)>=2|| Memory.getUnlock(14)) {
 			final Theme themeEducation = Themes.createEduTheme();
 			setStars((ImageView) education.findViewById(R.id.theme_edu), themeEducation, "edu");
 
@@ -302,7 +303,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 			animateShow(education);
 		}else return;
 
-		if(GetThemeScore.getScore(14)>=2) {
+		if(GetThemeScore.getScore(14)>=2|| Memory.getUnlock(15)) {
 			final Theme themeElectronics = Themes.createElcTheme();
 			setStars((ImageView) electronics.findViewById(R.id.theme_elec), themeElectronics, "elec");
 			electronics.setOnClickListener(new View.OnClickListener() {
@@ -314,7 +315,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 			animateShow(electronics);
 		}else return;
 
-		if(GetThemeScore.getScore(15)>=2) {
+		if(GetThemeScore.getScore(15)>=2|| Memory.getUnlock(16)) {
 			final Theme themeEntertainment = Themes.createEntertainTheme();
 			setStars((ImageView) entertainment.findViewById(R.id.theme_entertain), themeEntertainment, "entertain");
 			entertainment.setOnClickListener(new View.OnClickListener() {
@@ -346,7 +347,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 		View monuments = view.findViewById(R.id.theme_monu_container);
 		View sports = view.findViewById(R.id.theme_sport_container);
 
-		if(GetThemeScore.getScore(16)>=2){
+		if(GetThemeScore.getScore(16)>=2|| Memory.getUnlock(17)){
 			final Theme themeFraming = Themes.createFarmTheme();
 			setStars((ImageView) farming.findViewById(R.id.theme_farm), themeFraming, "farm");
 			farming.setOnClickListener(new View.OnClickListener() {
@@ -358,7 +359,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 			animateShow(farming);
 		}else return;
 
-		if(GetThemeScore.getScore(17)>=2) {
+		if(GetThemeScore.getScore(17)>=2|| Memory.getUnlock(18)) {
 			final Theme themeFurniture = Themes.createFurnTheme();
 			setStars((ImageView) furniture.findViewById(R.id.theme_furn), themeFurniture, "frun");
 			furniture.setOnClickListener(new View.OnClickListener() {
@@ -370,7 +371,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 			animateShow(furniture);
 		}else return;
 
-		if(GetThemeScore.getScore(18)>=2) {
+		if(GetThemeScore.getScore(18)>=2|| Memory.getUnlock(19)) {
 			final Theme themeGestures = Themes.createGestTheme();
 			setStars((ImageView) gestures.findViewById(R.id.theme_gest), themeGestures, "gest");
 			gestures.setOnClickListener(new View.OnClickListener() {
@@ -383,7 +384,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 		}else return;
 
 
-		if(GetThemeScore.getScore(19)>=2) {
+		if(GetThemeScore.getScore(19)>=2|| Memory.getUnlock(20)) {
 			final Theme themeHobbies = Themes.createHobbTheme();
 			setStars((ImageView) hobbies.findViewById(R.id.theme_hobb), themeHobbies, "hobb");
 			hobbies.setOnClickListener(new View.OnClickListener() {
@@ -395,7 +396,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 			animateShow(hobbies);
 		}else return;
 
-		if(GetThemeScore.getScore(20)>=2) {
+		if(GetThemeScore.getScore(20)>=2|| Memory.getUnlock(21)) {
 			final Theme themeKids = Themes.createKidsTheme();
 			setStars((ImageView) kids.findViewById(R.id.theme_kid), themeKids, "kids");
 			kids.setOnClickListener(new View.OnClickListener() {
@@ -407,7 +408,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 			animateShow(kids);
 		}else return;
 
-		if(GetThemeScore.getScore(21)>=2) {
+		if(GetThemeScore.getScore(21)>=2|| Memory.getUnlock(22)) {
 			final Theme themeMedical = Themes.createMedTheme();
 			setStars((ImageView) medical.findViewById(R.id.theme_med), themeMedical, "med");
 			medical.setOnClickListener(new View.OnClickListener() {
@@ -419,7 +420,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 			animateShow(medical);
 		}else return;
 
-		if(GetThemeScore.getScore(22)>=2) {
+		if(GetThemeScore.getScore(22)>=2|| Memory.getUnlock(23)) {
 			final Theme themeMonuments = Themes.createMonuTheme();
 			setStars((ImageView) monuments.findViewById(R.id.theme_monu), themeMonuments, "monu");
 			monuments.setOnClickListener(new View.OnClickListener() {
@@ -431,7 +432,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 			animateShow(monuments);
 		}else return;
 
-		if(GetThemeScore.getScore(23)>=2) {
+		if(GetThemeScore.getScore(23)>=2|| Memory.getUnlock(4)) {
 			final Theme themeSports = Themes.createSportTheme();
 			setStars((ImageView) sports.findViewById(R.id.theme_sport), themeSports, "sport");
 			sports.setOnClickListener(new View.OnClickListener() {
@@ -485,7 +486,7 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 
 	@Override
 	public void onRewardedVideoAdClosed() {
-		//mAd.loadAd("ca-app-pub-3940256099942544/5224354917", new AdRequest.Builder().build());
+		mAd.loadAd("ca-app-pub-3940256099942544/5224354917", new AdRequest.Builder().build());
 	}
 
 	@Override
@@ -524,15 +525,9 @@ public class themeFragment extends Fragment implements RewardedVideoAdListener{
 	}
 
 	private void unlockTheme(){
+		Memory.saveUnlock(id);
+		setFirstPage(first);
 
-		setStars((ImageView) lockedView.findViewById(R.id.theme_monsters), lockedTheme, "monsters");
-		monsters.setOnClickListener(null);
-		monsters.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Shared.eventBus.notify(new ThemeSelectedEvent(themeMonsters));
-			}
-		});
 		//animateShow(monsters);
 	}
 }

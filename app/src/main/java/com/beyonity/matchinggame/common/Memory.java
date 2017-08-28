@@ -25,4 +25,17 @@ public class Memory {
 		String key = String.format(highStartKey, theme, difficulty);
 		return sharedPreferences.getInt(key, 0);
 	}
+
+	public static void saveUnlock(int id){
+		SharedPreferences sharedPreferences = Shared.context.getSharedPreferences(SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
+		Editor edit = sharedPreferences.edit();
+
+		edit.putBoolean(String.valueOf(id), true).commit();
+	}
+
+	public static boolean getUnlock(int id) {
+		SharedPreferences sharedPreferences = Shared.context.getSharedPreferences(SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
+		return sharedPreferences.getBoolean(String.valueOf(id), false);
+	}
+
 }
