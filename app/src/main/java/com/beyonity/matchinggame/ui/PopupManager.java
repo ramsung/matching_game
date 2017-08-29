@@ -125,8 +125,8 @@ public class PopupManager {
 
 		// popup
 		PopupLockView popupLockView = new PopupLockView(Shared.context);
-		int width = Shared.context.getResources().getDimensionPixelSize(R.dimen.popup_settings_width);
-		int height = Shared.context.getResources().getDimensionPixelSize(R.dimen.popup_settings_height);
+		int width = Shared.context.getResources().getDimensionPixelSize(R.dimen.popup_unlock_width);
+		int height = Shared.context.getResources().getDimensionPixelSize(R.dimen.popup_unlock_height);
 		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(width, height);
 		params.addRule(RelativeLayout.CENTER_IN_PARENT);
 		popupContainer.addView(popupLockView, params);
