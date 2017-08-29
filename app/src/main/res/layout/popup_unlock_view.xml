@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:orientation="vertical"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="30dp"
         >
         <TextView
             android:id="@+id/sound_off_text"
@@ -73,7 +73,7 @@
 
         <Space
             android:layout_width="wrap_content"
-            android:layout_height="15dp" />
+            android:layout_height="10dp" />
     <TextView
         android:id="@+id/sound_off_text1"
         android:layout_width="match_parent"
