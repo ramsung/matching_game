@@ -55,8 +55,8 @@
     <dimen name="popup_button_score_margin_bottom">78dp</dimen>
     
     <!-- settings popup -->
-    <dimen name="popup_settings_width">400dp</dimen>
-    <dimen name="popup_settings_height">300dp</dimen>
+    <dimen name="popup_settings_width">300dp</dimen>
+    <dimen name="popup_settings_height">200dp</dimen>
     <dimen name="popup_settings_sound_image_size">40dp</dimen>
     <dimen name="popup_settings_sound_text_size">20dp</dimen>
     <dimen name="popup_settings_padding_top">55dp</dimen>

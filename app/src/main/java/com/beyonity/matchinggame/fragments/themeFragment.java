@@ -40,7 +40,7 @@ import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 import com.unity3d.ads.IUnityAdsListener;
 import com.unity3d.ads.UnityAds;
 
-public class themeFragment extends Fragment{
+public class themeFragment extends Fragment {
 	private static final String ARG_C = "content";
 	private static final String TAG = "themeFragment";
 	Theme themeAnimals;
@@ -69,9 +69,7 @@ public class themeFragment extends Fragment{
 	Theme themeSports;
 
 
-
-
-	View first,second,third;
+	View first, second, third;
 	int id;
 
 	public static themeFragment newInstance(String content) {
@@ -185,7 +183,7 @@ public class themeFragment extends Fragment{
 
 		}
 
-		if (GetThemeScore.getScore(themeEmoji.id) == 2|| Memory.getUnlock(4)) {
+		if (GetThemeScore.getScore(themeEmoji.id) == 2 || Memory.getUnlock(4)) {
 			themeTrans = Themes.createTransTheme();
 			setStars((ImageView) trans.findViewById(R.id.theme_trans), themeEmoji, "trans");
 			trans.setOnClickListener(new View.OnClickListener() {
@@ -196,7 +194,7 @@ public class themeFragment extends Fragment{
 			});
 			animateShow(trans);
 		} else {
-			themeTrans= Themes.createTransTheme();
+			themeTrans = Themes.createTransTheme();
 			Log.i(TAG, "setFirstPage: inside else");
 			trans.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -223,7 +221,7 @@ public class themeFragment extends Fragment{
 				}
 			});
 			animateShow(flag);
-		}else {
+		} else {
 			themeFlag = Themes.createFlagTheme();
 			Log.i(TAG, "setFirstPage: inside else");
 			flag.setOnClickListener(new View.OnClickListener() {
@@ -241,8 +239,7 @@ public class themeFragment extends Fragment{
 		}
 
 
-
-		if (GetThemeScore.getScore(themeFlag.id) == 2|| Memory.getUnlock(6)) {
+		if (GetThemeScore.getScore(themeFlag.id) == 2 || Memory.getUnlock(6)) {
 			themeFood = Themes.createFoodTheme();
 			setStars((ImageView) food.findViewById(R.id.theme_food), themeFood, "food");
 			food.setOnClickListener(new View.OnClickListener() {
@@ -270,7 +267,7 @@ public class themeFragment extends Fragment{
 		}
 
 
-		if (GetThemeScore.getScore(themeFood.id) == 2|| Memory.getUnlock(7)) {
+		if (GetThemeScore.getScore(themeFood.id) == 2 || Memory.getUnlock(7)) {
 			themeVeg = Themes.createVegTheme();
 			setStars((ImageView) veg.findViewById(R.id.theme_veg), themeFood, "veg");
 			veg.setOnClickListener(new View.OnClickListener() {
@@ -281,7 +278,7 @@ public class themeFragment extends Fragment{
 			});
 			animateShow(veg);
 		} else {
-			themeVeg= Themes.createVegTheme();
+			themeVeg = Themes.createVegTheme();
 			Log.i(TAG, "setFirstPage: inside else");
 			veg.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -298,7 +295,7 @@ public class themeFragment extends Fragment{
 		}
 
 
-		if (GetThemeScore.getScore(themeVeg.id) == 2|| Memory.getUnlock(8)) {
+		if (GetThemeScore.getScore(themeVeg.id) == 2 || Memory.getUnlock(8)) {
 			themeFruits = Themes.createFruitsTheme();
 			setStars((ImageView) fruits.findViewById(R.id.theme_fruits), themeFood, "fruits");
 			fruits.setOnClickListener(new View.OnClickListener() {
@@ -308,8 +305,8 @@ public class themeFragment extends Fragment{
 				}
 			});
 			animateShow(fruits);
-		}else {
-			themeFruits= Themes.createFruitsTheme();
+		} else {
+			themeFruits = Themes.createFruitsTheme();
 			Log.i(TAG, "setFirstPage: inside else");
 			fruits.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -346,7 +343,7 @@ public class themeFragment extends Fragment{
 		View electronics = view.findViewById(R.id.theme_elec_container);
 		View entertainment = view.findViewById(R.id.theme_entertain_container);
 
-		if(GetThemeScore.getScore(8)>=2|| Memory.getUnlock(9)){
+		if (GetThemeScore.getScore(8) >= 2 || Memory.getUnlock(9)) {
 			themeDrinks = Themes.createDrinksTheme();
 			setStars((ImageView) drinks.findViewById(R.id.theme_drinks), themeDrinks, "drinks");
 			drinks.setOnClickListener(new View.OnClickListener() {
@@ -356,8 +353,8 @@ public class themeFragment extends Fragment{
 				}
 			});
 			animateShow(drinks);
-		}else {
-			themeDrinks= Themes.createDrinksTheme();
+		} else {
+			themeDrinks = Themes.createDrinksTheme();
 			Log.i(TAG, "setFirstPage: inside else");
 			drinks.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -374,7 +371,7 @@ public class themeFragment extends Fragment{
 		}
 
 
-		if(GetThemeScore.getScore(9)>=2|| Memory.getUnlock(10)) {
+		if (GetThemeScore.getScore(9) >= 2 || Memory.getUnlock(10)) {
 			themeComm = Themes.createCommTheme();
 			setStars((ImageView) comm.findViewById(R.id.theme_comm), themeComm, "comm");
 			comm.setOnClickListener(new View.OnClickListener() {
@@ -384,7 +381,7 @@ public class themeFragment extends Fragment{
 				}
 			});
 			animateShow(comm);
-		}else {
+		} else {
 			themeComm = Themes.createCommTheme();
 			Log.i(TAG, "setFirstPage: inside else");
 			comm.setOnClickListener(new View.OnClickListener() {
@@ -402,7 +399,7 @@ public class themeFragment extends Fragment{
 		}
 
 
-		if(GetThemeScore.getScore(10)>=2|| Memory.getUnlock(11)) {
+		if (GetThemeScore.getScore(10) >= 2 || Memory.getUnlock(11)) {
 			themeCommerce = Themes.createCommerceTheme();
 			setStars((ImageView) commerce.findViewById(R.id.theme_commerce), themeCommerce, "commerce");
 			commerce.setOnClickListener(new View.OnClickListener() {
@@ -412,8 +409,8 @@ public class themeFragment extends Fragment{
 				}
 			});
 			animateShow(commerce);
-		}else {
-			themeCommerce= Themes.createCommerceTheme();
+		} else {
+			themeCommerce = Themes.createCommerceTheme();
 			Log.i(TAG, "setFirstPage: inside else");
 			commerce.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -430,7 +427,7 @@ public class themeFragment extends Fragment{
 		}
 
 
-		if(GetThemeScore.getScore(11)>=2|| Memory.getUnlock(12)) {
+		if (GetThemeScore.getScore(11) >= 2 || Memory.getUnlock(12)) {
 			themeComputer = Themes.createCompTheme();
 			setStars((ImageView) computer.findViewById(R.id.theme_comp), themeComputer, "comp");
 			computer.setOnClickListener(new View.OnClickListener() {
@@ -440,8 +437,8 @@ public class themeFragment extends Fragment{
 				}
 			});
 			animateShow(computer);
-		}else {
-			themeComputer= Themes.createCompTheme();
+		} else {
+			themeComputer = Themes.createCompTheme();
 			Log.i(TAG, "setFirstPage: inside else");
 			computer.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -458,7 +455,7 @@ public class themeFragment extends Fragment{
 		}
 
 
-		if(GetThemeScore.getScore(12)>=2|| Memory.getUnlock(13)) {
+		if (GetThemeScore.getScore(12) >= 2 || Memory.getUnlock(13)) {
 			themeConstruction = Themes.createConstructTheme();
 			setStars((ImageView) construction.findViewById(R.id.theme_construct), themeConstruction, "construct");
 			construction.setOnClickListener(new View.OnClickListener() {
@@ -468,7 +465,7 @@ public class themeFragment extends Fragment{
 				}
 			});
 			animateShow(construction);
-		}else {
+		} else {
 			themeConstruction = Themes.createConstructTheme();
 			Log.i(TAG, "setFirstPage: inside else");
 			construction.setOnClickListener(new View.OnClickListener() {
@@ -486,7 +483,7 @@ public class themeFragment extends Fragment{
 		}
 
 
-		if(GetThemeScore.getScore(13)>=2|| Memory.getUnlock(14)) {
+		if (GetThemeScore.getScore(13) >= 2 || Memory.getUnlock(14)) {
 			themeEducation = Themes.createEduTheme();
 			setStars((ImageView) education.findViewById(R.id.theme_edu), themeEducation, "edu");
 
@@ -497,7 +494,7 @@ public class themeFragment extends Fragment{
 				}
 			});
 			animateShow(education);
-		}else {
+		} else {
 			themeEducation = Themes.createEduTheme();
 			Log.i(TAG, "setFirstPage: inside else");
 			education.setOnClickListener(new View.OnClickListener() {
@@ -515,7 +512,7 @@ public class themeFragment extends Fragment{
 		}
 
 
-		if(GetThemeScore.getScore(14)>=2|| Memory.getUnlock(15)) {
+		if (GetThemeScore.getScore(14) >= 2 || Memory.getUnlock(15)) {
 			themeElectronics = Themes.createElcTheme();
 			setStars((ImageView) electronics.findViewById(R.id.theme_elec), themeElectronics, "elec");
 			electronics.setOnClickListener(new View.OnClickListener() {
@@ -525,7 +522,7 @@ public class themeFragment extends Fragment{
 				}
 			});
 			animateShow(electronics);
-		}else {
+		} else {
 			themeElectronics = Themes.createElcTheme();
 			Log.i(TAG, "setFirstPage: inside else");
 			electronics.setOnClickListener(new View.OnClickListener() {
@@ -543,7 +540,7 @@ public class themeFragment extends Fragment{
 		}
 
 
-		if(GetThemeScore.getScore(15)>=2|| Memory.getUnlock(16)) {
+		if (GetThemeScore.getScore(15) >= 2 || Memory.getUnlock(16)) {
 			themeEntertainment = Themes.createEntertainTheme();
 			setStars((ImageView) entertainment.findViewById(R.id.theme_entertain), themeEntertainment, "entertain");
 			entertainment.setOnClickListener(new View.OnClickListener() {
@@ -553,7 +550,7 @@ public class themeFragment extends Fragment{
 				}
 			});
 			animateShow(entertainment);
-		}else {
+		} else {
 			themeEntertainment = Themes.createEntertainTheme();
 			Log.i(TAG, "setFirstPage: inside else");
 			entertainment.setOnClickListener(new View.OnClickListener() {
@@ -571,14 +568,6 @@ public class themeFragment extends Fragment{
 		}
 
 
-
-
-
-
-
-
-
-
 	}
 
 	private void setThirdPage(View view) {
@@ -591,7 +580,7 @@ public class themeFragment extends Fragment{
 		View monuments = view.findViewById(R.id.theme_monu_container);
 		View sports = view.findViewById(R.id.theme_sport_container);
 
-		if(GetThemeScore.getScore(16)>=2|| Memory.getUnlock(17)){
+		if (GetThemeScore.getScore(16) >= 2 || Memory.getUnlock(17)) {
 			themeFarming = Themes.createFarmTheme();
 			setStars((ImageView) farming.findViewById(R.id.theme_farm), themeFarming, "farm");
 			farming.setOnClickListener(new View.OnClickListener() {
@@ -601,7 +590,7 @@ public class themeFragment extends Fragment{
 				}
 			});
 			animateShow(farming);
-		}else {
+		} else {
 			themeFarming = Themes.createFarmTheme();
 			Log.i(TAG, "setFirstPage: inside else");
 			farming.setOnClickListener(new View.OnClickListener() {
@@ -619,7 +608,7 @@ public class themeFragment extends Fragment{
 		}
 
 
-		if(GetThemeScore.getScore(17)>=2|| Memory.getUnlock(18)) {
+		if (GetThemeScore.getScore(17) >= 2 || Memory.getUnlock(18)) {
 			themeFurniture = Themes.createFurnTheme();
 			setStars((ImageView) furniture.findViewById(R.id.theme_furn), themeFurniture, "frun");
 			furniture.setOnClickListener(new View.OnClickListener() {
@@ -629,8 +618,8 @@ public class themeFragment extends Fragment{
 				}
 			});
 			animateShow(furniture);
-		}else {
-			themeFurniture= Themes.createFurnTheme();
+		} else {
+			themeFurniture = Themes.createFurnTheme();
 			Log.i(TAG, "setFirstPage: inside else");
 			furniture.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -647,8 +636,8 @@ public class themeFragment extends Fragment{
 		}
 
 
-		if(GetThemeScore.getScore(18)>=2|| Memory.getUnlock(19)) {
-			themeGesture= Themes.createGestTheme();
+		if (GetThemeScore.getScore(18) >= 2 || Memory.getUnlock(19)) {
+			themeGesture = Themes.createGestTheme();
 			setStars((ImageView) gestures.findViewById(R.id.theme_gest), themeGesture, "gest");
 			gestures.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -657,8 +646,8 @@ public class themeFragment extends Fragment{
 				}
 			});
 			animateShow(gestures);
-		}else {
-			themeGesture= Themes.createGestTheme();
+		} else {
+			themeGesture = Themes.createGestTheme();
 			Log.i(TAG, "setFirstPage: inside else");
 			gestures.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -675,8 +664,7 @@ public class themeFragment extends Fragment{
 		}
 
 
-
-		if(GetThemeScore.getScore(19)>=2|| Memory.getUnlock(20)) {
+		if (GetThemeScore.getScore(19) >= 2 || Memory.getUnlock(20)) {
 			themeHobbies = Themes.createHobbTheme();
 			setStars((ImageView) hobbies.findViewById(R.id.theme_hobb), themeHobbies, "hobb");
 			hobbies.setOnClickListener(new View.OnClickListener() {
@@ -686,8 +674,8 @@ public class themeFragment extends Fragment{
 				}
 			});
 			animateShow(hobbies);
-		}else {
-			themeHobbies= Themes.createHobbTheme();
+		} else {
+			themeHobbies = Themes.createHobbTheme();
 			Log.i(TAG, "setFirstPage: inside else");
 			hobbies.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -704,7 +692,7 @@ public class themeFragment extends Fragment{
 		}
 
 
-		if(GetThemeScore.getScore(20)>=2|| Memory.getUnlock(21)) {
+		if (GetThemeScore.getScore(20) >= 2 || Memory.getUnlock(21)) {
 			themeKids = Themes.createKidsTheme();
 			setStars((ImageView) kids.findViewById(R.id.theme_kid), themeKids, "kids");
 			kids.setOnClickListener(new View.OnClickListener() {
@@ -714,7 +702,7 @@ public class themeFragment extends Fragment{
 				}
 			});
 			animateShow(kids);
-		}else {
+		} else {
 			themeKids = Themes.createKidsTheme();
 			Log.i(TAG, "setFirstPage: inside else");
 			kids.setOnClickListener(new View.OnClickListener() {
@@ -732,7 +720,7 @@ public class themeFragment extends Fragment{
 		}
 
 
-		if(GetThemeScore.getScore(21)>=2|| Memory.getUnlock(22)) {
+		if (GetThemeScore.getScore(21) >= 2 || Memory.getUnlock(22)) {
 			themeMedical = Themes.createMedTheme();
 			setStars((ImageView) medical.findViewById(R.id.theme_med), themeMedical, "med");
 			medical.setOnClickListener(new View.OnClickListener() {
@@ -742,8 +730,8 @@ public class themeFragment extends Fragment{
 				}
 			});
 			animateShow(medical);
-		}else {
-			themeMedical= Themes.createMedTheme();
+		} else {
+			themeMedical = Themes.createMedTheme();
 			Log.i(TAG, "setFirstPage: inside else");
 			medical.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -760,7 +748,7 @@ public class themeFragment extends Fragment{
 		}
 
 
-		if(GetThemeScore.getScore(22)>=2|| Memory.getUnlock(23)) {
+		if (GetThemeScore.getScore(22) >= 2 || Memory.getUnlock(23)) {
 			themeMonuments = Themes.createMonuTheme();
 			setStars((ImageView) monuments.findViewById(R.id.theme_monu), themeMonuments, "monu");
 			monuments.setOnClickListener(new View.OnClickListener() {
@@ -770,8 +758,8 @@ public class themeFragment extends Fragment{
 				}
 			});
 			animateShow(monuments);
-		}else {
-			themeMonuments= Themes.createMonuTheme();
+		} else {
+			themeMonuments = Themes.createMonuTheme();
 			Log.i(TAG, "setFirstPage: inside else");
 			monuments.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -788,7 +776,7 @@ public class themeFragment extends Fragment{
 		}
 
 
-		if(GetThemeScore.getScore(23)>=2|| Memory.getUnlock(4)) {
+		if (GetThemeScore.getScore(23) >= 2 || Memory.getUnlock(4)) {
 			themeSports = Themes.createSportTheme();
 			setStars((ImageView) sports.findViewById(R.id.theme_sport), themeSports, "sport");
 			sports.setOnClickListener(new View.OnClickListener() {
@@ -798,7 +786,7 @@ public class themeFragment extends Fragment{
 				}
 			});
 			animateShow(sports);
-		}else {
+		} else {
 			themeSports = Themes.createSportTheme();
 			Log.i(TAG, "setFirstPage: inside else");
 			sports.setOnClickListener(new View.OnClickListener() {
@@ -835,9 +823,9 @@ public class themeFragment extends Fragment{
 		}
 		int num = sum / 6;
 
-			String drawableResourceName = String.format(Locale.US, type + "_theme_star_%d", num);
-			int drawableResourceId = Shared.context.getResources().getIdentifier(drawableResourceName, "drawable", Shared.context.getPackageName());
-			imageView.setImageResource(drawableResourceId);
+		String drawableResourceName = String.format(Locale.US, type + "_theme_star_%d", num);
+		int drawableResourceId = Shared.context.getResources().getIdentifier(drawableResourceName, "drawable", Shared.context.getPackageName());
+		imageView.setImageResource(drawableResourceId);
 
 	}
 
@@ -846,8 +834,12 @@ public class themeFragment extends Fragment{
 	public void onResume() {
 		super.onResume();
 		String content = getArguments().getString(ARG_C);
-		if(Integer.parseInt(content)==0){
+		if (Integer.parseInt(content) == 0) {
 			setFirstPage(first);
+		} else if (Integer.parseInt(content) == 1) {
+			setSecondPage(second);
+		} else if (Integer.parseInt(content) == 2) {
+			setThirdPage(third);
 		}
 	}
 }

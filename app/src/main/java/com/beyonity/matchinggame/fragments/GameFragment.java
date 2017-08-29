@@ -43,7 +43,7 @@ public class GameFragment extends BaseFragment {
 		((ViewGroup)view.findViewById(R.id.game_board)).setClipChildren(false);
 		//ad
 		mInterstitialAd = new InterstitialAd(Shared.context);
-		mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+		mInterstitialAd.setAdUnitId("ca-app-pub-7987343674758455/5160935102");
 		mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
 
