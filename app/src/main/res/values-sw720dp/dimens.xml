@@ -56,10 +56,10 @@
     
     <!-- settings popup -->
     <dimen name="popup_settings_width">400dp</dimen>
-    <dimen name="popup_settings_height">250dp</dimen>
+    <dimen name="popup_settings_height">320dp</dimen>
     <dimen name="popup_settings_sound_image_size">65dp</dimen>
     <dimen name="popup_settings_sound_text_size">25dp</dimen>
-    <dimen name="popup_settings_padding_top">68dp</dimen>
+    <dimen name="popup_settings_padding_top">100dp</dimen>
     <dimen name="popup_settings_padding_left">30dp</dimen>
 
     <!-- unlock popup -->

@@ -56,19 +56,19 @@
     
     <!-- settings popup -->
     <dimen name="popup_settings_width">300dp</dimen>
-    <dimen name="popup_settings_height">200dp</dimen>
+    <dimen name="popup_settings_height">300dp</dimen>
     <dimen name="popup_settings_sound_image_size">40dp</dimen>
     <dimen name="popup_settings_sound_text_size">20dp</dimen>
-    <dimen name="popup_settings_padding_top">55dp</dimen>
+    <dimen name="popup_settings_padding_top">85dp</dimen>
     <dimen name="popup_settings_padding_left">20dp</dimen>
     <dimen name="popup_settings_padding_right">20dp</dimen>
 
     <!-- unlock popup -->
-    <dimen name="popup_unlock_width">300dp</dimen>
-    <dimen name="popup_unlock_height">400dp</dimen>
+    <dimen name="popup_unlock_width">400dp</dimen>
+    <dimen name="popup_unlock_height">300dp</dimen>
     <dimen name="popup_unlock_star_image_size">35dp</dimen>
-
-    <dimen name="popup_unlock_padding_top">25dp</dimen>
+    <dimen name="popup_unlock_margin_top">70dp</dimen>
+    <dimen name="popup_unlock_padding_top">200dp</dimen>
     <dimen name="popup_unlock_padding_left">20dp</dimen>
     <dimen name="popup_unlock_padding_right">20dp</dimen>
 

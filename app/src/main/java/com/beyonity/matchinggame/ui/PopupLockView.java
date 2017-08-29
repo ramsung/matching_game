@@ -67,13 +67,5 @@ public class PopupLockView extends LinearLayout implements IUnityAdsListener{
 				}
 			}
 		});
-
-
 	}
-
-
-
-
-
-
 }

@@ -5,7 +5,8 @@
     android:orientation="vertical"
     android:gravity="left|top" 
     android:paddingTop="@dimen/popup_settings_padding_top"
-    android:paddingLeft="@dimen/popup_settings_padding_left">
+    android:paddingLeft="@dimen/popup_settings_padding_left"
+    >
 
     <LinearLayout
         android:id="@+id/sound_off"
@@ -13,7 +14,8 @@
         android:layout_height="wrap_content"
         android:gravity="left|center_vertical"
         android:orientation="horizontal" 
-        android:layout_marginLeft="5dp">
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="35dp">
 
         <ImageView
             android:id="@+id/sound_image"
