@@ -4,9 +4,6 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:gravity="center"
-
-    android:paddingLeft="@dimen/popup_unlock_padding_left"
-    android:paddingRight="@dimen/popup_unlock_padding_right"
     android:layout_marginTop="@dimen/popup_unlock_margin_top">
 
     <LinearLayout

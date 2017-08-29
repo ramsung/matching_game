@@ -776,7 +776,7 @@ public class themeFragment extends Fragment {
 		}
 
 
-		if (GetThemeScore.getScore(23) >= 2 || Memory.getUnlock(4)) {
+		if (GetThemeScore.getScore(23) >= 2 || Memory.getUnlock(24)) {
 			themeSports = Themes.createSportTheme();
 			setStars((ImageView) sports.findViewById(R.id.theme_sport), themeSports, "sport");
 			sports.setOnClickListener(new View.OnClickListener() {
