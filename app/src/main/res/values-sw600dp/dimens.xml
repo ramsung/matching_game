@@ -63,4 +63,12 @@
     <dimen name="popup_settings_padding_top">68dp</dimen>
     <dimen name="popup_settings_padding_left">30dp</dimen>
 
+    <!-- unlock popup -->
+    <dimen name="popup_unlock_width">500dp</dimen>
+    <dimen name="popup_unlock_height">400dp</dimen>
+    <dimen name="popup_unlock_star_image_size">65dp</dimen>
+
+    <dimen name="popup_unlock_padding_top">68dp</dimen>
+    <dimen name="popup_unlock_padding_left">30dp</dimen>
+
 </resources>
