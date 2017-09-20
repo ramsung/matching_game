@@ -14,8 +14,11 @@ import com.beyonity.matchinggame.ui.PopupManager;
 import com.beyonity.matchinggame.utils.Utils;
 
 import com.beyonity.matchinggame.utils.unityAdLisener;
+import com.crashlytics.android.Crashlytics;
 import com.google.android.gms.ads.MobileAds;
 import com.unity3d.ads.UnityAds;
+
+import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends FragmentActivity {
 
@@ -24,6 +27,7 @@ public class MainActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Fabric.with(this, new Crashlytics());
 		MobileAds.initialize(this, "ca-app-pub-7987343674758455~6668446139");
 		Shared.context = getApplicationContext();
 		Shared.engine = Engine.getInstance();
